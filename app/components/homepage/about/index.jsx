@@ -12,16 +12,16 @@ function AboutSection() {
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-        <div className="order-2 lg:order-1">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-2 ">
+        <div className="order-1 lg:order-2">
           <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
             Perfil
           </p>
-          <p className="text-gray-200 text-sm lg:text-lg">
+          <p className="text-gray-200 text-sm lg:text-lg  w-3/4">
             {personalData.description}
           </p>
         </div>
-        <div className="flex justify-center order-1 lg:order-2">
+        <div className="flex justify-center order-2 lg:order-1 ">
           <Image
             src={personalData.profile}
             width={280}
