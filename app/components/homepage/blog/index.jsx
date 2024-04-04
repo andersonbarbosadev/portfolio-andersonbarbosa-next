@@ -6,14 +6,13 @@ import BlogCard from "./blog-card";
 function Blog() {
   const blogs = [
     {
-      cover_image:
-        "https://portfolio-andersonbarbosadev-blog.vercel.app/image/blog-learn.png",
+      cover_image: "https://blog.andersonbarbosa.site/image/blog-learn.png",
       published_at: "02-04-2024",
       public_reactions_count: 0,
       comments_count: 0,
       title:
         "Plataformas que uso para aprender: Ampliando horizontes en la era digital",
-      url: "https://portfolio-andersonbarbosadev-blog.vercel.app/blog/plataformas-para-aprender/",
+      url: "https://blog.andersonbarbosa.site/blog/plataformas-para-aprender/",
       reading_time_minutes: 0,
       description:
         "En este post hablo acerca de las páginas y plataformas que uso para aprender.",
