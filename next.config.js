@@ -13,7 +13,7 @@ module.exports = {
 
       {
         protocol: "https",
-        hostname: "portfolio-andersonbarbosadev-blog.vercel.app",
+        hostname: "blog.andersonbarbosa.site",
       },
     ],
   },
