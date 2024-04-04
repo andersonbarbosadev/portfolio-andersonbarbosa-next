@@ -7,7 +7,7 @@ export const personalData = {
   email: "andersonbarbosadev@outlook.com",
   address: "Madrid, España",
   github: "https://github.com/andersonbarbosadev",
-  facebook: "https://www.facebook.com/profile.php?id=61558242500227",
+  facebook: "https://www.facebook.com/andersonbarbosafullstack/",
   linkedIn: "https://www.linkedin.com/in/anderson-barbosa-romero/",
   twitter: "https://twitter.com/stiven96",
   resume: "/anderson_barbosa_cv.pdf",
