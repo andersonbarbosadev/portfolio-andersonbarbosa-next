@@ -10,16 +10,16 @@ import { RiContactsFill } from "react-icons/ri";
 
 function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
+    <section className="relative flex flex-col items-center py-4 lg:py-12">
       <Image
         src="/hero.svg"
         alt="Hero"
         width={1572}
         height={795}
-        className="absolute -top-[98px] -z-10"
+        className="absolute -top-[98px] -z-10 justify-center p-2"
       />
 
-      <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8 gap-x-8">
+      <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8 gap-x-4">
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
           <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             Hola, <br />
@@ -86,7 +86,7 @@ function HeroSection() {
         </div>
 
         <div
-          className="order-1 lg:order-2 relative w-96"
+          className="order-1 lg:order-2 relative lg:w-96"
           style={{ height: "28rem" }}
         >
           <Image

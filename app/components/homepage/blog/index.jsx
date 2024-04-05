@@ -17,28 +17,6 @@ function Blog() {
       description:
         "En este post hablo acerca de las páginas y plataformas que uso para aprender.",
     },
-    {
-      cover_image: "/image/crefin.jpg",
-      published_at: "2022-01-01",
-      public_reactions_count: 0,
-      comments_count: 0,
-      title: "Blog 2",
-      url: "",
-      reading_time_minutes: 0,
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora consectetur rerum rem! Recusandae incidunt saepe dignissimos nam, nihil et, omnis odio maxime, cupiditate ratione vel est doloribus deleniti. Eius, minus!",
-    },
-    {
-      cover_image: "/image/crefin.jpg",
-      published_at: "2022-01-01",
-      public_reactions_count: 0,
-      comments_count: 0,
-      title: "Blog 3",
-      url: "",
-      reading_time_minutes: 0,
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora consectetur rerum rem! Recusandae incidunt saepe dignissimos nam, nihil et, omnis odio maxime, cupiditate ratione vel est doloribus deleniti. Eius, minus!",
-    },
   ];
 
   return (
