@@ -18,7 +18,8 @@
     "react-dom": "latest",
     "react-fast-marquee": "^1.6.2",
     "react-icons": "^4.11.0",
-    "react-toastify": "^10.0.4"
+    "react-toastify": "^10.0.4",
+    "resend": "^3.2.0"
   },
   "devDependencies": {
     "autoprefixer": "latest",
@@ -27,5 +28,6 @@
     "postcss": "latest",
     "sass": "^1.69.5",
     "tailwindcss": "latest"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
