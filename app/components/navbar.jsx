@@ -1,7 +1,41 @@
+"use client";
+
+import { useState } from "react";
 // @flow strict
 import Link from "next/link";
+import Image from "next/image";
+import FlagEn from "../../public/image/FlagEn.svg";
+import FlagEs from "../../public/image/FlagEs.svg";
+import { useTranslation } from "react-i18next";
 
 function Navbar() {
+  const langs = [
+    {
+      label: "Ingles",
+      value: "en",
+      icon: FlagEn,
+    },
+    {
+      label: "Español",
+      value: "es",
+      icon: FlagEs,
+    },
+  ];
+
+  const [open, setOpen] = useState(false);
+
+  const [t, i18next] = useTranslation("global");
+
+  const handlePopup = () => {
+    setOpen(!open);
+    const popup = document.getElementById("popup");
+    popup.classList.toggle("show");
+  };
+
+  const changeLang = (lang) => {
+    i18next.changeLanguage(lang);
+  };
+
   return (
     <nav className="bg-transparent">
       <div className="flex items-center justify-between py-5">
@@ -87,6 +121,35 @@ function Navbar() {
                 Experiencia
               </div>
             </a>
+          </li>
+          <li>
+            <div
+              className="block px-4 py-2 no-underline outline-none hover:no-underline popup hover:text-pink-600"
+              onClick={handlePopup}
+            >
+              <Image src={FlagEs} alt="language" width={20} height={20} />
+              <span
+                className="text-sm text-white transition-colors duration-300 popuptext"
+                id="popup"
+              >
+                {langs.map((lang) => (
+                  <div key={lang.value}>
+                    <span
+                      className="text-sm text-white transition-colors duration-300 hover:text-pink-600 inline-flex items-center gap-1 text-start"
+                      onClick={() => changeLang(lang.value)}
+                    >
+                      <Image
+                        src={lang.icon}
+                        alt={lang.label}
+                        width={20}
+                        height={20}
+                      />
+                      {lang.label}
+                    </span>
+                  </div>
+                ))}
+              </span>
+            </div>
           </li>
         </ul>
       </div>
