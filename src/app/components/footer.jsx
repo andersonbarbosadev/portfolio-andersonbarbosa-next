@@ -20,17 +20,23 @@ function Footer() {
             >
               Abu Said
             </Link>
-            <span className="text-white">
-              {" "}
-              and Modified by{" "}
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/in/yeimmy-lopez/"
-                className="text-indigo-400"
-              >
-                Vanesa López
-              </Link>
-            </span>
+            ,&nbsp;Modified by&nbsp;
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/anderson-barbosa-romero/"
+              className="text-indigo-400"
+            >
+              Anderson Barbosa
+            </Link>
+            &nbsp;And&nbsp;
+            <Link
+              target="_blank"
+              href="https://www.linkedin.com/in/yeimmy-lopez/"
+              className="text-indigo-400"
+            >
+              Vanesa López
+            </Link>
+            .
           </p>
         </div>
       </div>
