@@ -25,5 +25,7 @@ export async function POST(request) {
     return Response.error("Invalid captcha");
   }
 
+  // Send Email
+
   return Response.json({ res });
 }

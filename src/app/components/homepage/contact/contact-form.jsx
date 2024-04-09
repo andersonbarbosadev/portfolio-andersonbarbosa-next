@@ -5,22 +5,25 @@ import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
 import ReCAPTCHA from "react-google-recaptcha";
 
+// Import Server
+import { contactSendEmail } from "App/services/actions/contact.action";
+
 // Import Form
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getDefaultValuesForm } from "@/helpers/contact-form.helper";
-import { ContactSchema } from "@/schemas/contact-form.schema";
+import { ContactFormSchema } from "@/schemas/contact-form.schema";
 import FormProvider, {
   RHFTextArea,
   RHFTextField,
 } from "@/components/shared/hook-form";
-import { useMutationSendContact } from "@/services/site/contact";
+import { useMutationSendContact } from "@/services/api/site/contact";
 
 // Component
 function ContactForm() {
   // Hooks Form
   const methods = useForm({
-    resolver: zodResolver(ContactSchema),
+    resolver: zodResolver(ContactFormSchema),
     defaultValues: getDefaultValuesForm(),
   });
   const {
@@ -32,19 +35,8 @@ function ContactForm() {
   // Refs
   const recaptchaRef = useRef(null);
 
-  // Hooks API
-  const mutationSendContact = useMutationSendContact({
-    onSuccess: () => {
-      reset();
-      recaptchaRef.current.reset();
-    },
-  });
-
   // States
-  const isLoading = useMemo(
-    () => isSubmitting || mutationSendContact.isPending,
-    [isSubmitting, mutationSendContact.isPending]
-  );
+  const isLoading = useMemo(() => isSubmitting, [isSubmitting]);
 
   // Handlers
   const onSubmitSendMessage = useCallback(
@@ -56,14 +48,19 @@ function ContactForm() {
         return;
       }
 
-      // API
+      // Send Email
       data.captcha = recaptchaValue;
-      const mutatePromise = mutationSendContact.mutateAsync(data);
-      toast.promise(mutatePromise, {
+      const sendEmail = await toast.promise(contactSendEmail(data), {
         pending: "Enviando mensaje...",
         success: "Mensaje enviado correctamente. ¡Gracias! 🎉",
         error: "Error al enviar el mensaje. Por favor, intente nuevamente. 🙏",
       });
+
+      // Send success
+      if (sendEmail.success) {
+        reset();
+        recaptchaRef.current.reset();
+      }
     },
     [recaptchaRef]
   );
