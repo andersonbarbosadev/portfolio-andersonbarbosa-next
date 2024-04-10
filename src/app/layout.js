@@ -6,6 +6,8 @@ import Navbar from "./components/navbar";
 
 import "./css/card.scss";
 import "./css/globals.scss";
+import ReactQueryProvider from "@/components/providers/ReactQueryProvider";
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Portafolio de Anderson Barbosa",
@@ -16,14 +18,16 @@ export const metadata = {
 // Receive messages provided in `i18n.ts`
 export default function RootLayout({ children, params: { locale } }) {
   return (
-    <html lang={locale}>
-      <body>
-        <ToastContainer />
-        <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
-          <Navbar />
-          {children}
-        </main>
-        <Footer />
+    <html lang="en">
+      <body className={inter.className}>
+        <ReactQueryProvider>
+          <ToastContainer />
+          <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
+            <Navbar />
+            {children}
+          </main>
+          <Footer />
+        </ReactQueryProvider>
       </body>
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
     </html>
