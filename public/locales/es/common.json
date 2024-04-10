@@ -1,0 +1,73 @@
+{
+  "Navbar": {
+    "about": "Acerca de mi",
+    "education": "Educación",
+    "certificate": "Certificados",
+    "experience": "Experiencia"
+  },
+  "Hero": {
+    "title": "Hola",
+    "subtitle": "soy ",
+    "contact": "Contactame",
+    "cv": "Ver CV"
+  },
+  "About": {
+    "title": "Acerca de mí",
+    "subtitle": "Perfil",
+    "description": "Ingeniero de software con más de 7 años de experiencia en desarrollo Full-Stack, especializado en lenguajes como Python, PHP y JS, y en la administración de bases de datos que incluyen MySQL, PostgreSQL, Oracle y MongoDB. Mi liderazgo ha sido evidente al dirigir equipos de desarrollo, cultivando la colaboración y asegurando la entrega exitosa de proyectos innovadores."
+  },
+  "SoftSkills": {
+    "skill1": "Liderazgo de Equipos",
+    "subtitle1": "Escuchar y valorar a cada miembro del equipo es fundamental para su motivación y el éxito conjunto. Liderar es guiar con el ejemplo, apoyar y aprender de todos a tu alrededor.",
+    "skill2": "Planificación Estratégica",
+    "subtitle2": "Anticipar tendencias, establecer objetivos claros y adaptarse rápidamente son claves para el éxito sostenido.",
+    "skill3": "Gestión de Proyectos ",
+    "subtitle3": "La gestión de proyectos eficaz se centra en definir objetivos claros, priorizar tareas y mantener una comunicación fluida, asegurando que el equipo avance unido hacia metas compartidas."
+  },
+  "Experience": {
+    "experience": "Experiencia",
+    "experience1": "Ingeniero de Software",
+    "description1": "Especialista en el desarrollo y ejecución de proyectos con sólidas habilidades en PHP y JavaScript, aportando a la mejora continua y estabilidad del software principal. Experiencia en colaboración con equipos multidisciplinarios para alinear proyectos con objetivos estratégicos empresariales, evidenciando un fuerte compromiso con la innovación y la excelencia tecnológica.",
+    "experience2": "Ingeniero de Software",
+    "description2": "Desarrollador en comunicación de aplicaciones de intranet usando el protocolo SOAP, optimizando la integración de sistemas y mejorando la eficiencia operativa. Clave en el soporte del software principal, garantizando estabilidad y funcionalidad de aplicaciones estratégicas.",
+    "experience3": "Ingeniero de Software",
+    "description3": "Desarrollador Full Stack con experiencia en soporte técnico a multinacionales, especializado en PHP. Destacado por colaborar en equipos multidisciplinarios para diseñar y optimizar soluciones integrales, comprometido con la innovación y eficiencia mediante la actualización tecnológica constante.",
+    "position": "Cargo",
+    "time": "Duración",
+    "tools": "Herramientas",
+    "description": "Descripción"
+  },
+  "Time": {
+    "january": "Enero",
+    "february": "Febrero",
+    "march": "Marzo",
+    "april": "Abril",
+    "may": "Mayo",
+    "june": "Junio",
+    "july": "Julio",
+    "august": "Agosto",
+    "september": "Septiembre",
+    "october": "Octubre",
+    "november": "Noviembre",
+    "december": "Diciembre",
+    "present": "Actual"
+  },
+  "Education": {
+    "education": "Educación",
+    "education1": "Ingeniería en Sistemas",
+    "university": "Universidad Cooperativa de Colombia",
+    "certificate": "Certificados"
+  },
+  "Blog": {
+    "view more": "ver más"
+  },
+  "Contact": {
+    "contact me": "envíame un mensaje",
+    "contact": "Contacto",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send message": "enviar mensaje",
+    "subtitle": "Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto conmigo. Estoy atento a cualquier oportunidad de trabajo que se ajuste a mis aptitudes e intereses."
+  }
+}
