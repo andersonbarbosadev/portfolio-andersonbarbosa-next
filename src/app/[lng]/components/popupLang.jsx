@@ -13,12 +13,12 @@ function PopupLang({ lng }) {
 
   const langs = [
     {
-      label: "Ingles",
+      label: "English",
       value: "en",
       icon: FlagEn,
     },
     {
-      label: "Español",
+      label: "Spanish",
       value: "es",
       icon: FlagEs,
     },
