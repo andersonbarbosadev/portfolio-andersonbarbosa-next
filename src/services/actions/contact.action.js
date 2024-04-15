@@ -24,7 +24,6 @@ export const contactSendEmail = async (data) => {
       cc: ["andersonbarbosadev@outlook.com"],
       to: [email],
       subject: "Envio solicitud contacto",
-      // text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       react: ContactFormEmail({ name, email, message }),
     });
     return { success: true, data };
