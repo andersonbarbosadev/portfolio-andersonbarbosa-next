@@ -1,8 +1,11 @@
 // @flow strict
 
+import { useTranslation } from "@/app/i18n";
 import * as React from "react";
 
-function ProjectCard({ experience }) {
+async function ProjectCard({ experience, lng }) {
+  const { t } = await useTranslation(lng, "traslation");
+
   return (
     <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
       <div className="flex flex-row">
@@ -28,19 +31,21 @@ function ProjectCard({ experience }) {
             <span className="text-gray-400">{"{"}</span>
           </div>
           <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">Cargo:</span>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">
+              {t("position")}:
+            </span>
             <span className="text-gray-400">{`'`}</span>
             <span className="text-amber-300">{experience.role}</span>
             <span className="text-gray-400">{`',`}</span>
           </div>
           <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">Duración:</span>
+            <span className="ml-4 lg:ml-8 mr-2 text-white">{t("time")}:</span>
             <span className="text-orange-400">{experience.duration}</span>
             <span className="text-gray-400">,</span>
           </div>
 
           <div className="ml-4 lg:ml-8 mr-2">
-            <span className=" text-white">Herramientas:</span>
+            <span className=" text-white">{t("tools")}:</span>
             <span className="text-gray-400">{` ['`}</span>
             {experience.tools.map((tag, i) => (
               <React.Fragment key={i}>
@@ -53,7 +58,7 @@ function ProjectCard({ experience }) {
             <span className="text-gray-400">{"],"}</span>
           </div>
           <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">Descripción:</span>
+            <span className="text-white">{t("description")}:</span>
             <span className="text-cyan-400">
               {" " + experience.description}
             </span>

@@ -18,9 +18,12 @@ import FormProvider, {
   RHFTextField,
 } from "@/components/shared/hook-form";
 import { useMutationSendContact } from "@/services/api/site/contact";
+import { useTranslation } from "@/app/i18n/client";
 
 // Component
-function ContactForm() {
+function ContactForm({ lng }) {
+  const { t } = useTranslation(lng, "traslation");
+
   // Hooks Form
   const methods = useForm({
     resolver: zodResolver(ContactFormSchema),
@@ -44,16 +47,16 @@ function ContactForm() {
       // Validate Captcha
       const recaptchaValue = recaptchaRef.current.getValue();
       if (!recaptchaValue) {
-        toast.error("Por favor, complete el reCAPTCHA.");
+        toast.error(t("captcha error"));
         return;
       }
 
       // Send Email
       data.captcha = recaptchaValue;
       const sendEmail = await toast.promise(contactSendEmail(data), {
-        pending: "Enviando mensaje...",
-        success: "Mensaje enviado correctamente. ¡Gracias! 🎉",
-        error: "Error al enviar el mensaje. Por favor, intente nuevamente. 🙏",
+        pending: t("message pending send"),
+        success: t("message send"),
+        error: t("message error send"),
       });
 
       // Send success
@@ -65,7 +68,7 @@ function ContactForm() {
     [recaptchaRef]
   );
   const onSubmitSendMessageError = useCallback((error) => {
-    toast.warn("Por favor, complete el formulario correctamente.");
+    toast.warn(t("message error"));
     console.log({ error });
   }, []);
 
@@ -73,34 +76,34 @@ function ContactForm() {
   return (
     <div className="">
       <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
-        Envíame un mensaje
+        {t("send a message")}
       </p>
       <FormProvider
         methods={methods}
         onSubmit={handleSubmit(onSubmitSendMessage, onSubmitSendMessageError)}
       >
         <div className="max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5">
-          <p className="text-sm text-[#d3d8e8]">
-            {
-              "Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto conmigo. Estoy atento a cualquier oportunidad de trabajo que se ajuste a mis aptitudes e intereses."
-            }
-          </p>
+          <p className="text-sm text-[#d3d8e8]">{t("subtitle")}</p>
           <div className="mt-6 flex flex-col gap-4">
             <RHFTextField
               name="name"
-              label="Nombre"
+              label={t("name")}
               placeholder="Juan Perez"
               disabled={isLoading}
             />
 
             <RHFTextField
               name="email"
-              label="Email"
+              label={t("email")}
               placeholder="juan.p@gmail.com"
               disabled={isLoading}
             />
 
-            <RHFTextArea name="message" label="Mensaje" disabled={isLoading} />
+            <RHFTextArea
+              name="message"
+              label={t("message")}
+              disabled={isLoading}
+            />
 
             <div className="flex flex-col gap-2">
               <label className="text-base">reCAPTCHA: </label>
@@ -118,7 +121,7 @@ function ContactForm() {
                 role="button"
                 disabled={isLoading}
               >
-                <span>Enviar Mensaje</span>
+                <span>{t("send message")}</span>
                 <TbMailForward className="mt-1" size={18} />
               </button>
             </div>
