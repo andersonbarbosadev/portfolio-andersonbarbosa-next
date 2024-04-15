@@ -1,24 +1,10 @@
 // @flow strict
 import Link from "next/link";
-import Image from "next/image";
-import FlagEn from "/public/image/FlagEn.svg";
-import FlagEs from "/public/image/FlagEs.svg";
-import PopupLang from "./popupLang";
+import PopupLang from "/src/app/[lng]/components/popupLang";
+import { useTranslation } from "../i18n";
 
-function Navbar() {
-  const langs = [
-    {
-      label: "Ingles",
-      value: "en",
-      icon: FlagEn,
-    },
-    {
-      label: "Español",
-      value: "es",
-      icon: FlagEs,
-    },
-  ];
-
+async function Navbar({ lng }) {
+  const { t } = await useTranslation(lng, "traslation");
   return (
     <nav className="bg-transparent">
       <div className="flex items-center justify-between py-5">
@@ -41,7 +27,7 @@ function Navbar() {
               href="#about"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                Acerca de mi
+                {t("about")}
               </div>
             </a>
           </li>
@@ -71,7 +57,7 @@ function Navbar() {
               href="#education"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                Educación
+                {t("education")}
               </div>
             </a>
           </li>
@@ -81,7 +67,7 @@ function Navbar() {
               href="#certificate"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                Certificados
+                {t("certificate")}
               </div>
             </a>
           </li>
@@ -101,11 +87,11 @@ function Navbar() {
               href="#projects"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                Experiencia
+                {t("experience")}
               </div>
             </a>
           </li>
-          <PopupLang />
+          <PopupLang lng={lng} />
         </ul>
       </div>
     </nav>
