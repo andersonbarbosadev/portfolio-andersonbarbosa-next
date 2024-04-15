@@ -21,9 +21,9 @@ export const contactSendEmail = async (data) => {
   try {
     const data = await resend.emails.send({
       from: "Anderson Barbosa - Full Stack <hello@andersonbarbosa.site>",
+      cc: ["andersonbarbosadev@outlook.com"],
       to: [email],
-      subject: "Contact form submission",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      subject: "Envio solicitud contacto",
       react: ContactFormEmail({ name, email, message }),
     });
     return { success: true, data };
