@@ -23,8 +23,8 @@ export const contactSendEmail = async (data) => {
       from: "Anderson Barbosa - Full Stack <hello@andersonbarbosa.site>",
       cc: ["andersonbarbosadev@outlook.com"],
       to: [email],
-      subject: "Contact form submission",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      subject: "Envio solicitud contacto",
+      // text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       react: ContactFormEmail({ name, email, message }),
     });
     return { success: true, data };
