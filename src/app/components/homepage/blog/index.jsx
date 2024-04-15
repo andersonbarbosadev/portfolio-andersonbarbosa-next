@@ -2,11 +2,8 @@
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import BlogCard from "./blog-card";
-import { useTranslation } from "@/app/i18n";
 
-async function Blog({ lng }) {
-  const { t } = await useTranslation(lng, "traslation");
-
+function Blog() {
   const blogs = [
     {
       cover_image: "https://blog.andersonbarbosa.site/image/blog-learn.png",
@@ -58,7 +55,7 @@ async function Blog({ lng }) {
           href="https://blog.andersonbarbosa.site/"
           target="_blank"
         >
-          <span>{t("view more")}</span>
+          <span>Ver más</span>
           <FaArrowRight size={16} />
         </Link>
       </div>

@@ -1,6 +1,5 @@
 // @flow strict
 
-import { useTranslation } from "@/app/i18n";
 import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,16 +7,12 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
-import HeroImages from "/public/image/img-hero.webp";
-import HeroImg from "/public/hero.svg";
 
-async function HeroSection({ lng }) {
-  const { t } = await useTranslation(lng, "traslation");
-
+function HeroSection() {
   return (
     <section className="relative flex flex-col items-center py-4 lg:py-12">
       <Image
-        src={HeroImg}
+        src="/hero.svg"
         alt="Hero"
         width={1572}
         height={795}
@@ -27,9 +22,8 @@ async function HeroSection({ lng }) {
       <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8 gap-x-4">
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
           <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
-            {t("title hero")} <br />
-            {t("im")}
-            <span className=" text-red-400">{personalData.name}</span>
+            Hola, <br />
+            Soy <span className=" text-red-400">{personalData.name}</span>
             , <br />
             <span className=" bg-gradient-to-r from-yellow-200 via-red-400 to-indigo-400 font-semibold text-transparent bg-clip-text">
               {personalData.designation}
@@ -74,7 +68,7 @@ async function HeroSection({ lng }) {
               className="bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600"
             >
               <button className="px-3 text-xs md:px-8 py-3 md:py-4 bg-[#0d1224] rounded-full border-none text-center md:text-sm font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out  md:font-semibold flex items-center gap-1 hover:gap-3">
-                <span>{t("contact me")}</span>
+                <span>Contáctame</span>
                 <RiContactsFill size={16} />
               </button>
             </Link>
@@ -85,7 +79,7 @@ async function HeroSection({ lng }) {
               target="_blank"
               href={personalData.resume}
             >
-              <span>{t("cv")}</span>
+              <span>Ver CV</span>
               <MdDownload size={16} />
             </Link>
           </div>
@@ -96,7 +90,7 @@ async function HeroSection({ lng }) {
           style={{ height: "28rem" }}
         >
           <Image
-            src={HeroImages}
+            src="/image/img-hero.webp"
             alt="Hero"
             quality={100}
             fill

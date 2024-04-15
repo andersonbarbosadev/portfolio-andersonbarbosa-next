@@ -3,7 +3,7 @@
 import { ContactFormSchema } from "App/schemas/contact-form.schema";
 import { validateCaptcha } from "App/services/captcha";
 import { resend } from "App/libs/resend";
-import ContactFormEmail from "@/emails/contact-form-email";
+import ContactFormEmail from "App/emails/contact-form-email";
 
 export const contactSendEmail = async (data) => {
   // Validate Data Form

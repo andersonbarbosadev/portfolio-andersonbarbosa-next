@@ -1,10 +1,24 @@
 // @flow strict
 import Link from "next/link";
-import PopupLang from "/src/app/[lng]/components/popupLang";
-import { useTranslation } from "../i18n";
+import Image from "next/image";
+import FlagEn from "/public/image/FlagEn.svg";
+import FlagEs from "/public/image/FlagEs.svg";
+import PopupLang from "./popupLang";
 
-async function Navbar({ lng }) {
-  const { t } = await useTranslation(lng, "traslation");
+function Navbar() {
+  const langs = [
+    {
+      label: "Ingles",
+      value: "en",
+      icon: FlagEn,
+    },
+    {
+      label: "Español",
+      value: "es",
+      icon: FlagEs,
+    },
+  ];
+
   return (
     <nav className="bg-transparent">
       <div className="flex items-center justify-between py-5">
@@ -27,7 +41,7 @@ async function Navbar({ lng }) {
               href="#about"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                {t("about")}
+                Acerca de mi
               </div>
             </a>
           </li>
@@ -57,7 +71,7 @@ async function Navbar({ lng }) {
               href="#education"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                {t("education")}
+                Educación
               </div>
             </a>
           </li>
@@ -67,7 +81,7 @@ async function Navbar({ lng }) {
               href="#certificate"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                {t("certificate")}
+                Certificados
               </div>
             </a>
           </li>
@@ -87,11 +101,11 @@ async function Navbar({ lng }) {
               href="#projects"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                {t("experience")}
+                Experiencia
               </div>
             </a>
           </li>
-          <PopupLang lng={lng} />
+          <PopupLang />
         </ul>
       </div>
     </nav>

@@ -1,16 +1,13 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 // @flow strict
 import Image from "next/image";
 import FlagEn from "/public/image/FlagEn.svg";
 import FlagEs from "/public/image/FlagEs.svg";
-import { useRouter, usePathname } from "next/navigation";
-import { useTranslation } from "../../i18n/client";
+import { useRouter } from "next/navigation";
 
-function PopupLang({ lng }) {
-  // const { t } = useTranslation(lng, "traslation");
-
+function PopupLang() {
   const langs = [
     {
       label: "English",
@@ -27,14 +24,16 @@ function PopupLang({ lng }) {
   const [open, setOpen] = useState(false);
 
   const router = useRouter();
-  const pathname = usePathname();
 
   const handlePopup = () => {
     setOpen(!open);
+    const popup = document.getElementById("popup");
+    popup.classList.toggle("show");
   };
 
   const changeLang = (lang) => {
-    router.push(`/${lang}`);
+    console.log(lang);
+    // router.replace(`/${lang}`);
   };
 
   return (
@@ -43,20 +42,15 @@ function PopupLang({ lng }) {
         className="block px-4 py-2 no-underline outline-none hover:no-underline popup hover:text-pink-600"
         onClick={handlePopup}
       >
-        {pathname === "/en" ? (
-          <Image src={FlagEn} alt="english" width={20} height={20} />
-        ) : (
-          <Image src={FlagEs} alt="español" width={20} height={20} />
-        )}
+        Idioma
         <span
-          className={`text-sm text-white transition-colors duration-300 popuptext ${
-            open ? "show" : ""
-          }`}
+          className="text-sm text-white transition-colors duration-300 popuptext"
+          id="popup"
         >
           {langs.map((lang) => (
             <div key={lang.value}>
               <span
-                className="text-sm text-white transition-colors duration-300 hover:text-pink-600 inline-flex items-center gap-1 "
+                className="text-sm text-white transition-colors duration-300 hover:text-pink-600 inline-flex items-center gap-1 text-start"
                 onClick={() => changeLang(lang.value)}
               >
                 <Image

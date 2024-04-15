@@ -6,8 +6,6 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
 import experience from "/public/lottie/code.json";
-import SectionImg from "/public/section.svg";
-import BlurImg from "/public/blur-23.svg";
 
 function SoftSkills() {
   return (
@@ -16,7 +14,7 @@ function SoftSkills() {
       className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]"
     >
       <Image
-        src={SectionImg}
+        src="/section.svg"
         alt="Hero"
         width={1572}
         height={795}
@@ -50,7 +48,7 @@ function SoftSkills() {
                 >
                   <div className="p-3 relative">
                     <Image
-                      src={BlurImg}
+                      src="/blur-23.svg"
                       alt="Hero"
                       width={1080}
                       height={200}
