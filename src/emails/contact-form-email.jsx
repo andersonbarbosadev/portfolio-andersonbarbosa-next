@@ -50,7 +50,7 @@ const ContactFormEmail = ({ name, email, message }) => (
                   textAlign: "center",
                 }}
               >
-                Hola {name}Martha,
+                Hola {name},
               </Heading>
               <Heading
                 as="h6"
