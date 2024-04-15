@@ -15,11 +15,9 @@ export const metadata = {
     "Fullstack developer con más de 7 años de experiencia en la creación de aplicaciones moviles y web.",
 };
 
-export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }));
-}
-
 export default async function RootLayout({ children, params: { lng } }) {
+  console.log(lng);
+
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
