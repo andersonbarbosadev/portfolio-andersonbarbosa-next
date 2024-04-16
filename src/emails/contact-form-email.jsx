@@ -1,6 +1,5 @@
 import {
   Body,
-  Button,
   Container,
   Column,
   Head,
@@ -13,34 +12,24 @@ import {
   Text,
 } from "@react-email/components";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "https://localhost:3000";
-
 const ContactFormEmail = ({ name, email, message }) => (
   <Html>
     <Head />
     <Preview>Envio solicitud contacto</Preview>
+
     <Body style={main}>
       <Container>
         <Section>
           <Img
-            src={`${baseUrl}/png/placeholder.png`}
+            src="https://blog.andersonbarbosa.site/icon-logo.png"
             alt="logo"
             width="90"
-            height="40"
+            height="90"
+            style={logo}
           />
         </Section>
 
         <Section style={content}>
-          {/* <Row>
-              <Img
-                style={image}
-                width={620}
-                src={`${baseUrl}/static/yelp-header.png`}
-              />
-            </Row> */}
-
           <Row style={{ ...boxInfos, paddingBottom: "0" }}>
             <Column>
               <Heading
@@ -62,20 +51,9 @@ const ContactFormEmail = ({ name, email, message }) => (
                 He recibido su mensaje con éxito. En el transcurso del día me
                 comunicaré con usted.
               </Heading>
-              <Text>A continuación, le muestro los datos de su solicitud:</Text>
+              <Text>A continuación, le muestro su solicitud:</Text>
 
-              <Text style={paragraph}>
-                <b>Correo: </b>
-                {email}
-              </Text>
-              <Text style={{ ...paragraph, marginTop: -5 }}>
-                <b>Nombre: </b>
-                {name}
-              </Text>
-              <Text style={{ ...paragraph, marginTop: -5 }}>
-                <b>Mensaje: </b>
-                {message}
-              </Text>
+              <Text style={{ ...messageStyle, marginTop: -5 }}>{message}</Text>
 
               <Text style={{ ...paragraph, marginTop: -5 }}>
                 Muchas gracias por tomarse el tiempo de contactar conmigo,
@@ -112,23 +90,9 @@ const paragraph = {
 };
 
 const logo = {
-  padding: "30px 20px",
-};
-
-const containerButton = {
-  display: "flex",
-  justifyContent: "center",
-  width: "100%",
-};
-
-const button = {
-  backgroundColor: "#e00707",
-  borderRadius: 3,
-  color: "#FFF",
-  fontWeight: "bold",
-  border: "1px solid rgb(0,0,0, 0.1)",
-  cursor: "pointer",
-  padding: "12px 30px",
+  margin: "0 auto",
+  marginBottom: "14px",
+  borderRadius: "50%",
 };
 
 const content = {
@@ -137,10 +101,15 @@ const content = {
   overflow: "hidden",
 };
 
-const image = {
-  maxWidth: "100%",
-};
-
 const boxInfos = {
   padding: "20px",
+};
+
+const messageStyle = {
+  fontSize: "18px",
+  lineHeight: "1.4",
+  color: "#484848",
+  padding: "24px",
+  backgroundColor: "#f2f3f3",
+  borderRadius: "4px",
 };
