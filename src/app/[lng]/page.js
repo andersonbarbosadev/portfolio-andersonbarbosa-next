@@ -10,7 +10,13 @@ import Skills from "../components/homepage/skills";
 import Certificates from "../components/homepage/certificate";
 import Navbar from "../components/navbar";
 
-export default async function Home({ params: { lng } }) {
+export default async function Home(props) {
+  const params = await props.params;
+
+  const {
+    lng
+  } = params;
+
   return (
     <>
       <Navbar lng={lng} />

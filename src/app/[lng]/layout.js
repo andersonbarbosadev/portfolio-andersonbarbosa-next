@@ -19,7 +19,17 @@ export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
 
-export default async function RootLayout({ children, params: { lng } }) {
+export default async function RootLayout(props) {
+  const params = await props.params;
+
+  const {
+    lng
+  } = params;
+
+  const {
+    children
+  } = props;
+
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
