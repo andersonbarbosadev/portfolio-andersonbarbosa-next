@@ -53,7 +53,6 @@ function PopupLang() {
         {langs.map((lang) => (
           <Link key={lang.value} href={pathname} locale={lang.value}>
             <span className="inline-flex items-center gap-1 text-sm text-white transition-colors duration-300 hover:text-pink-600">
-              {/* <Image src={lang.icon} alt={lang.label} width={20} height={20} /> */}
               {lang.icon}
               {lang.label}
             </span>
