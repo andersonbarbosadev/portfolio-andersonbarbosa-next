@@ -1,13 +1,16 @@
-// @flow strict
-
 import { skillsData } from "@/utils/data/skills";
 import { skillsImage } from "@/utils/skill-image";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { useTranslations } from 'next-intl';
 
 function Skills() {
+  // -- Hooks
+  const t = useTranslations();
+
+  // -- Render
   return (
-    <div
+    <section
       id="skills"
       className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]"
     >
@@ -22,8 +25,8 @@ function Skills() {
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            SKILLS
+          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md uppercase">
+            {t("Skills")}
           </span>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -67,7 +70,7 @@ function Skills() {
           ))}
         </Marquee>
       </div>
-    </div>
+    </section>
   );
 }
 

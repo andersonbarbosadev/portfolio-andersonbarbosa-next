@@ -24,6 +24,16 @@ module.exports = {
         screens: {
           "4k": "1980px",
         },
+        animation: {
+          "gradient-border": "borderRotate 3s linear infinite",
+        },
+        keyframes: {
+          borderRotate: {
+            "0%": { backgroundPosition: "0% 50%" },
+            "50%": { backgroundPosition: "100% 50%" },
+            "100%": { backgroundPosition: "0% 50%" },
+          },
+        },
       },
     },
   },

@@ -8,10 +8,10 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
 import ContactForm from "./contact-form";
-import { useTranslation } from "@/app/i18n";
+import { useTranslations } from 'next-intl';
 
 async function ContactSection({ lng }) {
-  const { t } = await useTranslation(lng, "traslation");
+  const t = useTranslations();
 
   return (
     <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">

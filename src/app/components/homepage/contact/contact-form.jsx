@@ -17,12 +17,11 @@ import FormProvider, {
   RHFTextArea,
   RHFTextField,
 } from "@/components/shared/hook-form";
-import { useMutationSendContact } from "@/services/api/site/contact";
-import { useTranslation } from "@/app/i18n/client";
+import { useTranslations } from 'next-intl';
 
 // Component
 function ContactForm({ lng }) {
-  const { t } = useTranslation(lng, "traslation");
+  const t = useTranslations();
 
   // Hooks Form
   const methods = useForm({

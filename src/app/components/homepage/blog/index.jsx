@@ -1,29 +1,34 @@
-// @flow strict
+"use client";
+
+import { useMemo } from "react";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import BlogCard from "./blog-card";
-import { useTranslation } from "@/app/i18n";
+import { useTranslations } from 'next-intl';
 
-async function Blog({ lng }) {
-  const { t } = await useTranslation(lng, "traslation");
+function Blog() {
+  // -- Hooks
+  const t = useTranslations();
 
-  const blogs = [
-    {
-      cover_image: "https://blog.andersonbarbosa.site/image/blog-learn.png",
-      published_at: "02-04-2024",
-      public_reactions_count: 0,
-      comments_count: 0,
-      title:
-        "Plataformas que uso para aprender: Ampliando horizontes en la era digital",
-      url: "https://blog.andersonbarbosa.site/blog/plataformas-para-aprender/",
-      reading_time_minutes: 0,
-      description:
-        "En este post hablo acerca de las páginas y plataformas que uso para aprender.",
-    },
-  ];
+  // -- State Memo
+  const blogs = useMemo(() => {
+    return [
+      {
+        cover_image: "https://blog.andersonbarbosa.site/image/blog-learn.png",
+        published_at: "02-04-2024",
+        public_reactions_count: 0,
+        comments_count: 0,
+        title: t("data.blogs.title1"),
+        url: "https://blog.andersonbarbosa.site/blog/plataformas-para-aprender/",
+        reading_time_minutes: 4,
+        description: t("data.blogs.description1"),
+      }
+    ]
+  }, [t]);
 
+  // -- Render
   return (
-    <div
+    <section
       id="blogs"
       className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]"
     >
@@ -38,8 +43,8 @@ async function Blog({ lng }) {
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            BLOGS
+          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md uppercase">
+            {t("Blogs")}
           </span>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -58,11 +63,11 @@ async function Blog({ lng }) {
           href="https://blog.andersonbarbosa.site/"
           target="_blank"
         >
-          <span>{t("view more")}</span>
+          <span>{t("View more")}</span>
           <FaArrowRight size={16} />
         </Link>
       </div>
-    </div>
+    </section>
   );
 }
 

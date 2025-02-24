@@ -3,18 +3,18 @@ export const softSkills = [
     id: 1,
     title: "Liderazgo de Equipos",
     description:
-      "Escuchar y valorar a cada miembro del equipo es fundamental para su motivación y el éxito conjunto. Liderar es guiar con el ejemplo, apoyar y aprender de todos a tu alrededor.",
+      "Me encanta liderar con el ejemplo y asegurarme de que cada voz sea escuchada para lograr el éxito juntos.",
   },
   {
     id: 2,
-    title: "Planificación Estratégica    ",
+    title: "Planificación Estratégica",
     description:
-      "Anticipar tendencias, establecer objetivos claros y adaptarse rápidamente son claves para el éxito sostenido.    ",
+      "Disfruto anticipando lo que viene y marcando objetivos claros para asegurar el triunfo.",
   },
   {
     id: 3,
-    title: "Gestión de Proyectos    ",
+    title: "Gestión de Proyectos",
     description:
-      "La gestión de proyectos eficaz se centra en definir objetivos claros, priorizar tareas y mantener una comunicación fluida, asegurando que el equipo avance unido hacia metas compartidas.",
+      "Me enfoco en establecer metas claras y mantener una comunicación constante para guiar proyectos al éxito.",
   },
 ];

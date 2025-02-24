@@ -1,7 +1,7 @@
-import ayla from "/public/image/ayla.jpg";
-import crefin from "/public/image/crefin.jpg";
-import realEstate from "/public/image/real-estate.jpg";
-import travel from "/public/image/travel.jpg";
+import ayla from "Public/image/ayla.jpg";
+import crefin from "Public/image/crefin.jpg";
+import realEstate from "Public/image/real-estate.jpg";
+import travel from "Public/image/travel.jpg";
 
 export const experienceData = [
   {
@@ -44,6 +44,15 @@ export const experienceData = [
   },
   {
     id: 3,
+    name: "Ingeniero de Software",
+    description:
+      "Desarrollador Full Stack con experiencia en soporte técnico a multinacionales, especializado en PHP. Destacado por colaborar en equipos multidisciplinarios para diseñar y optimizar soluciones integrales, comprometido con la innovación y eficiencia mediante la actualización tecnológica constante.",
+    tools: ["PHP", "C#", "JS"],
+    duration: "Febrero 2018 - Julio 2021",
+    role: "Full Stack Developer",
+  },
+  {
+    id: 4,
     name: "Ingeniero de Software",
     description:
       "Desarrollador Full Stack con experiencia en soporte técnico a multinacionales, especializado en PHP. Destacado por colaborar en equipos multidisciplinarios para diseñar y optimizar soluciones integrales, comprometido con la innovación y eficiencia mediante la actualización tecnológica constante.",

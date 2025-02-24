@@ -1,39 +1,79 @@
-import { experienceData } from "@/utils/data/projects-data";
-import ProjectCard from "./project-card";
-import { useTranslation } from "@/app/i18n";
+"use client"
 
-const Projects = async ({ lng }) => {
-  const { t } = await useTranslation(lng, "traslation");
+import { useMemo } from "react"
+import { experienceData } from "@/utils/data/projects-data"
+import ProjectCard from "./project-card"
+import { useTranslations } from "next-intl"
 
+function Experiences() {
+  // -- Hooks
+  const t = useTranslations()
+
+  // -- State Memo
+  const experiences = useMemo(() => {
+    return [
+      {
+        id: 1,
+        role: t("data.experience.role1"),
+        duration: t("data.experience.duration1"),
+        tools: t("data.experience.tools1").split(","),
+        company: t("data.experience.company1"),
+        description: t("data.experience.description1"),
+      },
+      {
+        id: 2,
+        role: t("data.experience.role2"),
+        duration: t("data.experience.duration2"),
+        tools: t("data.experience.tools2").split(","),
+        company: t("data.experience.company2"),
+        description: t("data.experience.description2"),
+      },
+      {
+        id: 3,
+        role: t("data.experience.role3"),
+        duration: t("data.experience.duration3"),
+        tools: t("data.experience.tools3").split(","),
+        company: t("data.experience.company3"),
+        description: t("data.experience.description3"),
+      },
+    ]
+  }, [t])
+  const experiencesLeft = useMemo(() => {
+    return [experiences[0], experiences[2]]
+  }, [experiences])
+  const experiencesRight = useMemo(() => {
+    return [experiences[1]]
+  }, [experiences])
+
+  // -- Render
   return (
-    <div id="projects" className="relative z-50  my-12 lg:my-24">
+    <section id="experience" className="relative z-50 my-12 lg:my-24">
       <div className="sticky top-10">
-        <div className="w-[80px] h-[80px] bg-violet-100 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl  opacity-30"></div>
-        <div className="flex items-center justify-start relative">
-          <span className="bg-[#1a1443] absolute left-0  w-fit text-white px-5 py-3 text-xl rounded-md">
-            {t("experience section")}
+        <div className="absolute -top-3 left-0 h-[80px] w-[80px] translate-x-1/2 rounded-full bg-violet-100 opacity-30 blur-3xl filter"></div>
+        <div className="relative flex items-center justify-start">
+          <span className="absolute left-0 w-fit rounded-md bg-[#1a1443] px-5 py-3 text-xl text-white uppercase">
+            {t("Experience")}
           </span>
-          <span className="w-full h-[2px] bg-[#1a1443]"></span>
+          <span className="h-[2px] w-full bg-[#1a1443]"></span>
         </div>
       </div>
 
       <div className="pt-24">
-        <div className="flex flex-col gap-6">
-          {experienceData.slice(0, 4).map((exp, index) => (
-            <div
-              id={`sticky-card-${index + 1}`}
-              key={index}
-              className="sticky-card w-full mx-auto max-w-2xl sticky"
-            >
-              <div className="box-border flex items-center justify-center rounded shadow-[0_0_30px_0_rgba(0,0,0,0.3)] transition-all duration-[0.5s]">
-                <ProjectCard experience={exp} lng={lng} />
-              </div>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-6">
+            {experiencesLeft.map((exp) => (
+              <ProjectCard key={`sticky-card-${exp.id + 1}`} experience={exp} />
+            ))}
+          </div>
+          <div className="flex flex-col items-center justify-center gap-6">
+            {experiencesRight.map((exp) => (
+              <ProjectCard key={`sticky-card-${exp.id + 1}`} experience={exp} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </section>
+  )
+}
 
-export default Projects;
+export default Experiences

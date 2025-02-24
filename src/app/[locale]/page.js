@@ -5,30 +5,31 @@ import ContactSection from "../components/homepage/contact";
 import Education from "../components/homepage/education";
 import SoftSkills from "../components/homepage/softSkills";
 import HeroSection from "../components/homepage/hero-section";
-import Projects from "../components/homepage/experiences";
+import Experiences from "../components/homepage/experiences";
 import Skills from "../components/homepage/skills";
 import Certificates from "../components/homepage/certificate";
 import Navbar from "../components/navbar";
 
-export default async function Home(props) {
-  const params = await props.params;
-
-  const {
-    lng
-  } = params;
+export default async function Home() {
 
   return (
     <>
-      <Navbar lng={lng} />
-      <HeroSection lng={lng} />
-      <AboutSection lng={lng} />
+      <HeroSection />
+      <AboutSection />
       <SoftSkills />
       <Skills />
-      <Projects lng={lng} />
-      <Education lng={lng} />
-      <Certificates lng={lng} />
-      <Blog lng={lng} />
-      <ContactSection lng={lng} />
+      <Experiences />
+      {/* <Education /> */}
+      <Certificates />
+      <Blog />
+
+
+      {/*
+
+
+
+
+      <ContactSection lng={lng} /> */}
     </>
   );
 }

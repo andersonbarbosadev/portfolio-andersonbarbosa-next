@@ -1,17 +1,22 @@
-// @flow strict
+"use client";
+
 import Image from "next/image";
 
 import { educations } from "@/utils/data/educations";
 import { BsPersonWorkspace } from "react-icons/bs";
-import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
-import lottieFile from "/public/lottie/study.json";
-import SectionImg from "/public/section.svg";
-import BlurImg from "/public/blur-23.svg";
-import { useTranslation } from "@/app/i18n";
+import lottieFile from "Public/lottie/study.json";
+import SectionImg from "Public/section.svg";
+import BlurImg from "Public/blur-23.svg";
+import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
 
-async function Education({ lng }) {
-  const { t } = await useTranslation(lng, "traslation");
+const AnimationLottie = dynamic(() => import('App/app/components/helper/animation-lottie.jsx'), {
+  ssr: false,
+})
+
+function Education({ lng }) {
+  const t = useTranslations();
 
   return (
     <div

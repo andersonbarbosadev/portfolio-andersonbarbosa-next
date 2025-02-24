@@ -1,0 +1,79 @@
+{
+  "English": "Inglés",
+  "Spanish": "Español",
+  "About me": "Acerca de mi",
+  "Soft skills": "Soft skills",
+  "Skills": "Skills",
+  "Education": "Educación",
+  "Certificate": "Certificados",
+  "Blogs": "Blogs",
+  "Experience": "Experiencia",
+  "Hi": "Hola",
+  "I'm": "Soy",
+  "Contact me": "Contáctame",
+  "CV": "CV",
+  "Get CV": "Ver CV",
+  "Profile": "Perfil",
+  "Company": "Compañía",
+  "Position": "Cargo",
+  "Duration": "Duración",
+  "Tools": "Herramientas",
+  "Description": "Descripción",
+  "Certificates": "Certificados",
+  "View more": "Ver más",
+  "data": {
+    "about": {
+      "description": "Ingeniero de software con más de 7 años de experiencia en desarrollo Full-Stack, especializado en lenguajes como Python, PHP y JS, y en la administración de bases de datos que incluyen MySQL, PostgreSQL, Oracle y MongoDB. Mi liderazgo ha sido evidente al dirigir equipos de desarrollo, cultivando la colaboración y asegurando la entrega exitosa de proyectos innovadores."
+    },
+    "soft-skills": {
+      "title1": "Liderazgo de Equipos",
+      "description1": "Me encanta liderar con el ejemplo y asegurarme de que cada voz sea escuchada para lograr el éxito juntos.",
+      "title2": "Planificación Estratégica",
+      "description2": "Disfruto anticipando lo que viene y marcando objetivos claros para asegurar el triunfo.",
+      "title3": "Gestión de Proyectos",
+      "description3": "Me enfoco en establecer metas claras y mantener una comunicación constante para guiar proyectos al éxito."
+    },
+    "experience": {
+      "role1": "Front-end Senior",
+      "duration1": "Enero 2024 - Actual",
+      "tools1": "Microfrontends,JS,Angularjs,Reactjs,PHP,Symfony",
+      "company1": "Quiktrak, LLC",
+      "description1": "Desarrollo y mantenimiento de la plataforma de la compañía, enfocándome en la implementación de microfrontends para mejorar la escalabilidad y modularidad del sistema.\n\nResponsabilidades clave:\n\n- Desarrollo de nuevos módulos y soporte en la plataforma.\n- Migración de una arquitectura monolítica a microfrontends sin afectar el servicio.\n- Optimización del rendimiento y escalabilidad del sistema.\n- Colaboración con un equipo multidisciplinario, incluyendo Product Managers, Backend Seniors, Tech Leads y Android Developers.",
+      "role2": "Full Stack Developer",
+      "duration2": "Mayo 2022 - Diciembre 2023",
+      "tools2": "PHP,JavaScript,AngularJS,JQuery,Symfony,MySQL,Docker,Jenkins",
+      "company2": "Grupo TKS",
+      "description2": "- Creación y ejecución de proyectos desde cero, demostrando habilidades sólidas en PHP y JavaScript.\n- Participación activa en el soporte y mejora continua del software principal de la empresa, asegurando su estabilidad y rendimiento óptimo.\n- Colaboración cercana con equipos multidisciplinarios para garantizar la alineación de los proyectos con los objetivos estratégicos de la empresa.",
+      "role3": "Ingeniero de Software",
+      "duration3": "Agosto 2021 - Abril 2022",
+      "tools3": "PHP,SOAP,JAVA",
+      "company3": "Bayport Colombia",
+      "description3": "- Comunicación de aplicaciones de intranet mediante el protocolo SOAP, optimizando la integración de sistemas y mejorando la eficiencia operativa.\n- Soporte clave en el software principal de la compañía, asegurando la estabilidad y funcionalidad continua de aplicaciones estratégicas"
+    },
+    "certificates": {
+      "institution1": "Universidad Cooperativa de Colombia",
+      "career1": "Ingeniería en Sistemas",
+      "location1": "Bogotá, Colombia",
+      "endDate1": "Abril 2020",
+      "institution2": "EAE Business School",
+      "career2": "Máster en Big Data & Analytics",
+      "location2": "Madrid, España",
+      "endDate2": "Mayo 2022"
+    },
+    "blogs": {
+      "title1": "Plataformas que uso para aprender: Ampliando horizontes en la era digital",
+      "description1": "En este post hablo acerca de las páginas y plataformas que uso para aprender."
+    }
+  },
+  "name": "Nombre",
+  "email": "Correo electrónico",
+  "message": "Mensaje",
+  "send message": "enviar mensaje",
+  "subtitle": "Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto conmigo. Estoy atento a cualquier oportunidad de trabajo que se ajuste a mis aptitudes e intereses.",
+  "send a message": "Envíame un mensaje",
+  "message error": "Por favor, complete el formulario correctamente.",
+  "captcha error": "Por favor, complete el reCAPTCHA.",
+  "message send": "Mensaje enviado correctamente. ¡Gracias! 🎉",
+  "message error send": "Error al enviar el mensaje. Por favor, intente nuevamente. 🙏",
+  "message pending send": "Enviando mensaje..."
+}

@@ -1,0 +1,79 @@
+{
+  "English": "English",
+  "Spanish": "Spanish",
+  "About me": "About me",
+  "Soft skills": "Soft skills",
+  "Skills": "Skills",
+  "Education": "Education",
+  "Certificate": "Certificates",
+  "Blogs": "Blogs",
+  "Experience": "Experience",
+  "Hi": "Hi",
+  "I'm": "I'm",
+  "Contact me": "Contact me",
+  "CV": "CV",
+  "Get CV": "View CV",
+  "Profile": "Profile",
+  "Company": "Company",
+  "Position": "Position",
+  "Duration": "Duration",
+  "Tools": "Tools",
+  "Description": "Description",
+  "Certificates": "Certificates",
+  "View more": "View more",
+  "data": {
+    "about": {
+      "description": "Software engineer with over 7 years of experience in Full-Stack development, specializing in languages like Python, PHP, and JS, and database administration including MySQL, PostgreSQL, Oracle, and MongoDB. My leadership has been evident in directing development teams, fostering collaboration, and ensuring the successful delivery of innovative projects."
+    },
+    "soft-skills": {
+      "title1": "Team Leadership",
+      "description1": "I love leading by example and ensuring every voice is heard to achieve success together.",
+      "title2": "Strategic Planning",
+      "description2": "I enjoy anticipating future needs and setting clear goals to ensure success.",
+      "title3": "Project Management",
+      "description3": "I focus on establishing clear objectives and maintaining open communication to guide projects to success."
+    },
+    "experience": {
+      "role1": "Senior Front-end Developer",
+      "duration1": "January 2024 - Present",
+      "tools1": "Microfrontends,JS,AngularJS,ReactJS,PHP,Symfony",
+      "company1": "Quiktrak, LLC",
+      "description1": "Developed and maintained the company's platform, focusing on implementing microfrontends to improve scalability and modularity.\n\nKey responsibilities:\n\n- Developed new modules and provided platform support.\n- Migrated a monolithic architecture to microfrontends without service disruption.\n- Optimized system performance and scalability.\n- Collaborated with multidisciplinary teams including Product Managers, Backend Seniors, Tech Leads, and Android Developers.",
+      "role2": "Full Stack Developer",
+      "duration2": "May 2022 - December 2023",
+      "tools2": "PHP,JavaScript,AngularJS,jQuery,Symfony,MySQL,Docker,Jenkins",
+      "company2": "Grupo TKS",
+      "description2": "- Created and executed projects from scratch, demonstrating strong PHP and JavaScript skills.\n- Actively contributed to supporting and continuously improving the company's main software, ensuring stability and optimal performance.\n- Collaborated closely with multidisciplinary teams to align projects with the company's strategic goals.",
+      "role3": "Software Engineer",
+      "duration3": "August 2021 - April 2022",
+      "tools3": "PHP,SOAP,JAVA",
+      "company3": "Bayport Colombia",
+      "description3": "- Communicated intranet applications via the SOAP protocol, optimizing system integration and operational efficiency.\n- Provided critical support for the company's main software, ensuring the ongoing stability and functionality of strategic applications."
+    },
+    "certificates": {
+      "institution1": "Cooperative University of Colombia",
+      "career1": "Systems Engineering",
+      "location1": "Bogotá, Colombia",
+      "endDate1": "April 2020",
+      "institution2": "EAE Business School",
+      "career2": "Master's in Big Data & Analytics",
+      "location2": "Madrid, Spain",
+      "endDate2": "May 2022"
+    },
+    "blogs": {
+      "title1": "Platforms I Use to Learn: Expanding Horizons in the Digital Era",
+      "description1": "In this post, I discuss the websites and platforms I use for continuous learning."
+    }
+  },
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "send message": "Send message",
+  "subtitle": "If you have any questions or concerns, feel free to contact me. I'm open to any job opportunities that align with my skills and interests.",
+  "send a message": "Send me a message",
+  "message error": "Please fill out the form correctly.",
+  "captcha error": "Please complete the reCAPTCHA.",
+  "message send": "Message sent successfully. Thank you! 🎉",
+  "message error send": "Error sending message. Please try again. 🙏",
+  "message pending send": "Sending message..."
+}

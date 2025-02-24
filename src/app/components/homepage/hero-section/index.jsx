@@ -1,21 +1,21 @@
-// @flow strict
+import { useTranslations } from "next-intl"
+import { personalData } from "@/utils/data/personal-data"
+import Image from "next/image"
+// import Link from "next/link";
+import { Link } from "@/i18n/routing"
+import { FaSquareFacebook, FaSquareXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6"
+import { RiContactsFill } from "react-icons/ri"
+import HeroImages from "Public/image/img-hero.webp"
+import HeroImg from "Public/hero.svg"
+import { MynauiCloudDownload } from "App/components/ui/icons/MynauiCloudDownload"
 
-import { useTranslation } from "@/app/i18n";
-import { personalData } from "@/utils/data/personal-data";
-import Image from "next/image";
-import Link from "next/link";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
-import { MdDownload } from "react-icons/md";
-import { RiContactsFill } from "react-icons/ri";
-import HeroImages from "/public/image/img-hero.webp";
-import HeroImg from "/public/hero.svg";
+function HeroSection() {
+  // -- Hooks
+  const t = useTranslations()
 
-async function HeroSection({ lng }) {
-  const { t } = await useTranslation(lng, "traslation");
-
+  // -- Render
   return (
-    <section className="relative flex flex-col items-center py-4 lg:py-12">
+    <section id="hero" className="relative flex flex-col items-center py-4 lg:py-12">
       <Image
         src={HeroImg}
         alt="Hero"
@@ -24,14 +24,14 @@ async function HeroSection({ lng }) {
         className="absolute -top-[98px] -z-10 justify-center p-2"
       />
 
-      <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8 gap-x-4">
-        <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
-          <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
-            {t("title hero")} <br />
-            {t("im")}
-            <span className=" text-red-400">{personalData.name}</span>
+      <div className="grid grid-cols-1 items-start gap-x-4 gap-y-8 lg:grid-cols-2 lg:gap-12">
+        <div className="order-2 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:order-1 lg:pt-10">
+          <h1 className="text-3xl leading-10 font-bold text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
+            {t("Hi")}, <br />
+            {t("I'm")}&nbsp;
+            <span className="text-red-400">{personalData.name}</span>
             , <br />
-            <span className=" bg-gradient-to-r from-yellow-200 via-red-400 to-indigo-400 font-semibold text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-yellow-200 via-red-400 to-indigo-400 bg-clip-text font-semibold text-transparent">
               {personalData.designation}
             </span>
             .
@@ -41,60 +41,55 @@ async function HeroSection({ lng }) {
             <Link
               href={personalData.github}
               target="_blank"
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
+              className="text-pink-500 transition-all duration-300 hover:scale-125"
             >
-              <BsGithub size={30} />
+              <FaGithub size={40} />
             </Link>
             <Link
               href={personalData.linkedIn}
               target="_blank"
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
+              className="text-pink-500 transition-all duration-300 hover:scale-125"
             >
-              <BsLinkedin size={30} />
+              <FaLinkedin size={40} />
             </Link>
             <Link
               href={personalData.facebook}
               target="_blank"
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
+              className="text-pink-500 transition-all duration-300 hover:scale-125"
             >
-              <FaFacebook size={30} />
+              <FaSquareFacebook size={40} />
             </Link>
             <Link
               href={personalData.twitter}
               target="_blank"
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
+              className="text-pink-500 transition-all duration-300 hover:scale-125"
             >
-              <FaTwitterSquare size={30} />
+              <FaSquareXTwitter size={40} />
             </Link>
           </div>
 
           <div className="flex items-center gap-3">
             <Link
               href="#contact"
-              className="bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600"
+              className="rounded-full bg-gradient-to-r from-violet-600 to-pink-500 p-[1px] transition-all duration-300 hover:from-pink-500 hover:to-violet-600"
             >
-              <button className="px-3 text-xs md:px-8 py-3 md:py-4 bg-[#0d1224] rounded-full border-none text-center md:text-sm font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out  md:font-semibold flex items-center gap-1 hover:gap-3">
-                <span>{t("contact me")}</span>
+              <button className="flex items-center gap-1 rounded-full border-none bg-[#0d1224] px-3 py-3 text-center text-xs font-medium tracking-wider text-[#ffff] uppercase no-underline transition-all duration-200 ease-out hover:gap-3 md:px-8 md:py-4 md:text-sm md:font-semibold">
+                <span>{t("Contact me")}</span>
                 <RiContactsFill size={16} />
               </button>
             </Link>
 
             <Link
-              className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-              role="button"
-              target="_blank"
-              href={personalData.resume}
+              className="flex items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 py-3 text-center text-xs font-medium tracking-wider text-white uppercase no-underline transition-all duration-200 ease-out hover:gap-3 hover:text-white hover:no-underline md:px-8 md:py-4 md:text-sm md:font-semibold"
+              href="/cv"
             >
-              <span>{t("cv")}</span>
-              <MdDownload size={16} />
+              <span>{t("Get CV")}</span>
+              <MynauiCloudDownload />
             </Link>
           </div>
         </div>
 
-        <div
-          className="order-1 lg:order-2 relative lg:w-96"
-          style={{ height: "28rem" }}
-        >
+        <div className="relative order-1 lg:order-2 lg:w-96" style={{ height: "28rem" }}>
           <Image
             src={HeroImages}
             alt="Hero"
@@ -108,7 +103,7 @@ async function HeroSection({ lng }) {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default HeroSection;
+export default HeroSection

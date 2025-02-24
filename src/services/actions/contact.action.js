@@ -1,8 +1,8 @@
 "use server";
 
+import { resend } from "App/libs/resend";
 import { ContactFormSchema } from "App/schemas/contact-form.schema";
 import { validateCaptcha } from "App/services/captcha";
-import { resend } from "App/libs/resend";
 import ContactFormEmail from "@/emails/contact-form-email";
 
 export const contactSendEmail = async (data) => {
