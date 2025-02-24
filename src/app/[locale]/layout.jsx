@@ -6,10 +6,11 @@ import "../css/globals.css"
 import ReactQueryProvider from "@/components/providers/ReactQueryProvider"
 import GoogleAnalytics from "../GoogleAnalytics"
 import { NextIntlClientProvider } from "next-intl"
-import { routing } from "@/i18n/routing"
+import { routing, redirect } from "@/i18n/routing"
 import { getMessages } from "next-intl/server"
 import Navbar from "../components/navbar"
 import clsx from "clsx"
+import { notFound } from 'next/navigation'
 
 export const runtime = "nodejs"
 

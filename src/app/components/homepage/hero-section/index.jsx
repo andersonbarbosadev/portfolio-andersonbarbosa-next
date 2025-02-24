@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl"
 import { personalData } from "@/utils/data/personal-data"
 import Image from "next/image"
-// import Link from "next/link";
 import { Link } from "@/i18n/routing"
 import { FaSquareFacebook, FaSquareXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6"
 import { RiContactsFill } from "react-icons/ri"

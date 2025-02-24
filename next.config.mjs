@@ -12,16 +12,6 @@ const nextConfig = {
       },
     },
   },
-  // sassOptions: {
-  //   includePaths: [path.join(__dirname, "styles")],
-  // },
-  // webpack: (config) => {
-  //   config.module.rules.push({
-  //     test: /\.pdf$/,
-  //     type: "asset/resource", // O usa 'file-loader' si es necesario
-  //   });
-  //   return config;
-  // },
   images: {
     formats: ['image/avif', 'image/webp'],  // Optimize images with Next.js
     remotePatterns: [

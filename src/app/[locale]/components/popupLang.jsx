@@ -2,15 +2,18 @@
 
 import { useState, useMemo, useCallback } from "react"
 import Image from "next/image"
-import { useRouter, usePathname } from "next/navigation"
+// import { useRouter, usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
 import { FlagEs4x3 } from "App/components/ui/icons/FlagEs4x3"
 import { FlagUs4x3 } from "App/components/ui/icons/FlagUs4x3"
+import { usePathname } from "@/i18n/routing"
+import { useLocale } from "next-intl"
 
 function PopupLang() {
   // -- Server Hooks
   const t = useTranslations()
+  const locale = useLocale()
   const pathname = usePathname()
 
   // -- States
@@ -33,10 +36,8 @@ function PopupLang() {
     [t]
   )
   const currentLang = useMemo(() => {
-    const paths = pathname.split("/")
-    const locale = paths[1]
     return langs.find((lang) => lang.value === locale)
-  }, [langs, pathname])
+  }, [langs, locale])
 
   // -- Handlers
   const handlePopup = useCallback(() => setOpen((prev) => !prev), [setOpen])
@@ -50,7 +51,7 @@ function PopupLang() {
       {currentLang ? currentLang.icon : null}
       <span className={`popuptext text-sm text-white transition-colors duration-300 ${open ? "show" : ""}`}>
         {langs.map((lang) => (
-          <Link key={lang.value} href="/" locale={lang.value}>
+          <Link key={lang.value} href={pathname} locale={lang.value}>
             <span className="inline-flex items-center gap-1 text-sm text-white transition-colors duration-300 hover:text-pink-600">
               {/* <Image src={lang.icon} alt={lang.label} width={20} height={20} /> */}
               {lang.icon}
