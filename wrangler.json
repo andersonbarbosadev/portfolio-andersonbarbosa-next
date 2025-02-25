@@ -13,5 +13,11 @@
       "binding": "NEXT_CACHE_WORKERS_KV",
       "id": "0283922876d84df99435d2e36151ce44"
     }
+  ],
+  "routes": [
+    {
+      "pattern": "andersonbarbosa.site",
+      "custom_domain": true
+    }
   ]
 }
