@@ -12,12 +12,14 @@ import Navbar from "../components/navbar"
 import clsx from "clsx"
 import { notFound } from "next/navigation"
 
-export const runtime = "nodejs"
-
 export const metadata = {
   title: "Portafolio de Anderson Barbosa",
   description: "Fullstack developer con más de 7 años de experiencia en la creación de aplicaciones moviles y web.",
 }
+
+export const viewport = {
+  maximumScale: 1,
+};
 
 const staticHeader = "relative mx-auto text-white sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]"
 
