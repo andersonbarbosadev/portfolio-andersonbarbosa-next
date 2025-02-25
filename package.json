@@ -45,6 +45,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
     "@next/eslint-plugin-next": "^15.1.7",
+    "@opennextjs/cloudflare": "^0.5.3",
     "@types/node": "^20.12.7",
     "autoprefixer": "latest",
     "babel-plugin-react-compiler": "19.0.0-beta-e1e972c-20250221",

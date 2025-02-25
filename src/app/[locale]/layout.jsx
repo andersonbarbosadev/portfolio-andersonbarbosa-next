@@ -1,7 +1,7 @@
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Footer from "../components/footer"
-import "../css/card.css";
+import "../css/card.css"
 import "../css/globals.css"
 import ReactQueryProvider from "@/components/providers/ReactQueryProvider"
 import GoogleAnalytics from "../GoogleAnalytics"
@@ -10,7 +10,7 @@ import { routing, redirect } from "@/i18n/routing"
 import { getMessages } from "next-intl/server"
 import Navbar from "../components/navbar"
 import clsx from "clsx"
-import { notFound } from 'next/navigation'
+import { notFound } from "next/navigation"
 
 export const runtime = "nodejs"
 

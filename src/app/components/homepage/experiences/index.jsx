@@ -1,7 +1,6 @@
 "use client"
 
 import { useMemo } from "react"
-import { experienceData } from "@/utils/data/projects-data"
 import ProjectCard from "./project-card"
 import { useTranslations } from "next-intl"
 
@@ -59,7 +58,7 @@ function Experiences() {
       </div>
 
       <div className="pt-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div className="flex flex-col gap-6">
             {experiencesLeft.map((exp) => (
               <ProjectCard key={`sticky-card-${exp.id + 1}`} experience={exp} />

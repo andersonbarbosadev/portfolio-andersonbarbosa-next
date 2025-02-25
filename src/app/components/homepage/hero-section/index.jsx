@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl"
-import { personalData } from "@/utils/data/personal-data"
 import Image from "next/image"
 import { Link } from "@/i18n/routing"
 import { FaSquareFacebook, FaSquareXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6"
@@ -7,6 +6,13 @@ import { RiContactsFill } from "react-icons/ri"
 import HeroImages from "Public/image/img-hero.webp"
 import HeroImg from "Public/hero.svg"
 import { MynauiCloudDownload } from "App/components/ui/icons/MynauiCloudDownload"
+
+export const personalData = {
+  github: "https://github.com/andersonbarbosadev",
+  facebook: "https://www.facebook.com/andersonbarbosafullstack/",
+  linkedIn: "https://www.linkedin.com/in/anderson-barbosa-romero/",
+  twitter: "https://x.com/stiven96",
+}
 
 function HeroSection() {
   // -- Hooks
@@ -28,10 +34,10 @@ function HeroSection() {
           <h1 className="text-3xl leading-10 font-bold text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             {t("Hi")}, <br />
             {t("I'm")}&nbsp;
-            <span className="text-red-400">{personalData.name}</span>
+            <span className="text-red-400">Anderson Barbosa</span>
             , <br />
             <span className="bg-gradient-to-r from-yellow-200 via-red-400 to-indigo-400 bg-clip-text font-semibold text-transparent">
-              {personalData.designation}
+              {t("Full-Stack developer")}
             </span>
             .
           </h1>

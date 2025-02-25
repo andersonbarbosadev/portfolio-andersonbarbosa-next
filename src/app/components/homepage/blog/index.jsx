@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { useMemo } from "react";
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
-import BlogCard from "./blog-card";
-import { useTranslations } from 'next-intl';
+import { useMemo } from "react"
+import Link from "next/link"
+import { FaArrowRight } from "react-icons/fa"
+import BlogCard from "./blog-card"
+import { useTranslations } from "next-intl"
 
 function Blog() {
   // -- Hooks
-  const t = useTranslations();
+  const t = useTranslations()
 
   // -- State Memo
   const blogs = useMemo(() => {
@@ -22,43 +22,36 @@ function Blog() {
         url: "https://blog.andersonbarbosa.site/blog/plataformas-para-aprender/",
         reading_time_minutes: 4,
         description: t("data.blogs.description1"),
-      }
+      },
     ]
-  }, [t]);
+  }, [t])
 
   // -- Render
   return (
-    <section
-      id="blogs"
-      className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]"
-    >
-      <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
+    <section id="blogs" className="relative z-50 my-12 border-t border-[#25213b] lg:my-24">
+      <div className="absolute top-6 left-[42%] h-[100px] w-[100px] translate-x-1/2 rounded-full bg-violet-100 opacity-20 blur-3xl filter"></div>
 
-      <div className="flex justify-center -translate-y-[1px]">
+      <div className="flex -translate-y-[1px] justify-center">
         <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
         </div>
       </div>
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md uppercase">
-            {t("Blogs")}
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+      <div className="my-5 flex justify-center lg:py-8">
+        <div className="flex items-center">
+          <span className="h-[2px] w-24 bg-[#1a1443]"></span>
+          <span className="w-fit rounded-md bg-[#1a1443] p-2 px-5 text-xl text-white uppercase">{t("Blogs")}</span>
+          <span className="h-[2px] w-24 bg-[#1a1443]"></span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
-        {blogs.map(
-          (blog, i) => blog?.cover_image && <BlogCard blog={blog} key={i} />
-        )}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 md:gap-5 lg:gap-8 xl:gap-10">
+        {blogs.map((blog, i) => blog?.cover_image && <BlogCard blog={blog} key={i} />)}
       </div>
 
-      <div className="flex justify-center  mt-5 lg:mt-12">
+      <div className="mt-5 flex justify-center lg:mt-12">
         <Link
-          className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
+          className="flex items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 py-3 text-center text-xs font-medium tracking-wider text-white uppercase no-underline transition-all duration-200 ease-out hover:gap-3 hover:text-white hover:no-underline md:px-8 md:py-4 md:text-sm md:font-semibold"
           role="button"
           href="https://blog.andersonbarbosa.site/"
           target="_blank"
@@ -68,7 +61,7 @@ function Blog() {
         </Link>
       </div>
     </section>
-  );
+  )
 }
 
-export default Blog;
+export default Blog

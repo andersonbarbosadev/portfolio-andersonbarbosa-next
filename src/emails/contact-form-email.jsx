@@ -1,16 +1,4 @@
-import {
-  Body,
-  Container,
-  Column,
-  Head,
-  Heading,
-  Html,
-  Img,
-  Preview,
-  Row,
-  Section,
-  Text,
-} from "@react-email/components";
+import { Body, Container, Column, Head, Heading, Html, Img, Preview, Row, Section, Text } from "@react-email/components"
 
 const ContactFormEmail = ({ name, email, message }) => (
   <Html>
@@ -20,13 +8,7 @@ const ContactFormEmail = ({ name, email, message }) => (
     <Body style={main}>
       <Container>
         <Section>
-          <Img
-            src="https://blog.andersonbarbosa.site/icon-logo.png"
-            alt="logo"
-            width="90"
-            height="90"
-            style={logo}
-          />
+          <Img src="https://blog.andersonbarbosa.site/icon-logo.png" alt="logo" width="90" height="90" style={logo} />
         </Section>
 
         <Section style={content}>
@@ -48,16 +30,14 @@ const ContactFormEmail = ({ name, email, message }) => (
                   textAlign: "center",
                 }}
               >
-                He recibido su mensaje con éxito. En el transcurso del día me
-                comunicaré con usted.
+                He recibido su mensaje con éxito. En el transcurso del día me comunicaré con usted.
               </Heading>
               <Text>A continuación, le muestro su solicitud:</Text>
 
               <Text style={{ ...messageStyle, marginTop: -5 }}>{message}</Text>
 
               <Text style={{ ...paragraph, marginTop: -5 }}>
-                Muchas gracias por tomarse el tiempo de contactar conmigo,
-                espero podamos trabajar juntos.
+                Muchas gracias por tomarse el tiempo de contactar conmigo, espero podamos trabajar juntos.
               </Text>
             </Column>
           </Row>
@@ -75,35 +55,35 @@ const ContactFormEmail = ({ name, email, message }) => (
       </Container>
     </Body>
   </Html>
-);
+)
 
-export default ContactFormEmail;
+export default ContactFormEmail
 
 const main = {
   backgroundColor: "#fff",
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
-};
+}
 
 const paragraph = {
   fontSize: 16,
-};
+}
 
 const logo = {
   margin: "0 auto",
   marginBottom: "14px",
   borderRadius: "50%",
-};
+}
 
 const content = {
   border: "1px solid rgb(0,0,0, 0.1)",
   borderRadius: "3px",
   overflow: "hidden",
-};
+}
 
 const boxInfos = {
   padding: "20px",
-};
+}
 
 const messageStyle = {
   fontSize: "18px",
@@ -112,4 +92,4 @@ const messageStyle = {
   padding: "24px",
   backgroundColor: "#f2f3f3",
   borderRadius: "4px",
-};
+}

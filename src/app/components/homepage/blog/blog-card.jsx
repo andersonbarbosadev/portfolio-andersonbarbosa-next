@@ -1,23 +1,23 @@
 // @flow strict
-import { timeConverter } from "@/utils/time-converter";
-import Image from "next/image";
-import Link from "next/link";
-import { FaCommentAlt } from "react-icons/fa";
+import { timeConverter } from "@/utils/time-converter"
+import Image from "next/image"
+import Link from "next/link"
+import { FaCommentAlt } from "react-icons/fa"
 
 function BlogCard({ blog }) {
   return (
-    <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group">
-      <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
+    <div className="group relative rounded-lg border border-[#1d293a] bg-[#1b203e] transition-all duration-500 hover:border-[#464c6a]">
+      <div className="h-44 w-auto cursor-pointer overflow-hidden rounded-t-lg lg:h-52">
         <Image
           src={blog?.cover_image}
           height={1080}
           width={1900}
           alt=""
-          className="h-full w-full group-hover:scale-110 transition-all duration-300"
+          className="h-full w-full transition-all duration-300 group-hover:scale-110"
         />
       </div>
-      <div className="p-2 sm:p-3 flex flex-col">
-        <div className="flex justify-between items-center text-indigo-300 text-sm">
+      <div className="flex flex-col p-2 sm:p-3">
+        <div className="flex items-center justify-between text-sm text-indigo-300">
           <p>{timeConverter(blog.published_at)}</p>
           <div className="flex items-center gap-3">
             {blog.comments_count > 0 && (
@@ -29,17 +29,15 @@ function BlogCard({ blog }) {
           </div>
         </div>
         <Link target="_blank" href={blog.url}>
-          <p className="my-2 lg:my-3 cursor-pointer text-lg text-white sm:text-xl font-medium hover:text-violet-500">
+          <p className="my-2 cursor-pointer text-lg font-medium text-white hover:text-violet-500 sm:text-xl lg:my-3">
             {blog.title}
           </p>
         </Link>
 
-        <p className="text-sm lg:text-base text-[#d3d8e8] pb-3 lg:pb-6 line-clamp-3">
-          {blog.description}
-        </p>
+        <p className="line-clamp-3 pb-3 text-sm text-[#d3d8e8] lg:pb-6 lg:text-base">{blog.description}</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default BlogCard;
+export default BlogCard

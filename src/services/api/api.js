@@ -1,4 +1,4 @@
-import axios from "App/libs/axios";
+import axios from "App/libs/axios"
 
 /**
  * Create data from api
@@ -7,6 +7,6 @@ import axios from "App/libs/axios";
  * @returns {Promise<object>} Data created
  */
 export async function createApi(endpoint, newData) {
-  const { data } = await axios.post(endpoint, newData);
-  return data;
+  const { data } = await axios.post(endpoint, newData)
+  return data
 }

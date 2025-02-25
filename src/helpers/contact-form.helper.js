@@ -3,5 +3,5 @@ export const getDefaultValuesForm = () => {
     name: "",
     email: "",
     message: "",
-  };
-};
+  }
+}

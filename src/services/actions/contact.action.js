@@ -1,21 +1,21 @@
-"use server";
+"use server"
 
-import { resend } from "App/libs/resend";
-import { ContactFormSchema } from "App/schemas/contact-form.schema";
-import { validateCaptcha } from "App/services/captcha";
-import ContactFormEmail from "@/emails/contact-form-email";
+import { resend } from "App/libs/resend"
+import { ContactFormSchema } from "App/schemas/contact-form.schema"
+import { validateCaptcha } from "App/services/captcha"
+import ContactFormEmail from "@/emails/contact-form-email"
 
 export const contactSendEmail = async (data) => {
   // Validate Data Form
-  const parse = ContactFormSchema.safeParse(data);
-  if (parse.error) throw new Error(parse.error.message);
+  const parse = ContactFormSchema.safeParse(data)
+  if (parse.error) throw new Error(parse.error.message)
 
   // Variables
-  const { name, email, message, captcha } = data;
+  const { name, email, message, captcha } = data
 
   // Validate Captcha
-  const checkCaptcha = await validateCaptcha(captcha);
-  if (!checkCaptcha.success) throw new Error(checkCaptcha.error);
+  const checkCaptcha = await validateCaptcha(captcha)
+  if (!checkCaptcha.success) throw new Error(checkCaptcha.error)
 
   // Send Email
   try {
@@ -25,9 +25,9 @@ export const contactSendEmail = async (data) => {
       to: [email],
       subject: "Envio solicitud contacto",
       react: ContactFormEmail({ name, email, message }),
-    });
-    return { success: true, data };
+    })
+    return { success: true, data }
   } catch (error) {
-    throw new Error("Error sending email");
+    throw new Error("Error sending email")
   }
-};
+}
