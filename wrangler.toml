@@ -1,0 +1,7 @@
+name = "portfolio-andersonbarbosa-next"
+
+compatibility_date = "2025-02-25"
+compatibility_flags = ["nodejs_compat"]
+
+main = ".worker-next/index.mjs"
+assets = { directory = ".worker-next/assets", binding = "ASSETS" }

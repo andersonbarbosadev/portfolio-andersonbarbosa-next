@@ -5,10 +5,12 @@ import PopupLang from "App/app/[locale]/components/popupLang"
 import { useTranslations } from "next-intl"
 import { MynauiCloudDownload } from "App/components/ui/icons/MynauiCloudDownload"
 import clsx from "clsx"
+import { useCurriculum } from "@/hooks/useCurriculum"
 
 function Navbar() {
-  // -- Server Hooks
+  // -- Hooks
   const t = useTranslations()
+  const { curriculumURL } = useCurriculum()
 
   // -- Render
   return (
@@ -88,7 +90,7 @@ function Navbar() {
 
           {/* CV */}
           <li>
-            <Link className="relative inline-block" href="/cv">
+            <Link className="relative inline-block" href={curriculumURL}>
               <div className="animate-gradient-spin absolute inset-0 rounded-lg bg-gradient-to-r from-pink-500 to-violet-600 blur-md"></div>
               <div
                 className={clsx(

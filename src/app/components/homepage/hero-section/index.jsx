@@ -1,11 +1,15 @@
+"use client"
+
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import { Link } from "@/i18n/routing"
+import { routing, Link } from "@/i18n/routing"
 import { FaSquareFacebook, FaSquareXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6"
 import { RiContactsFill } from "react-icons/ri"
 import HeroImages from "Public/image/img-hero.webp"
 import HeroImg from "Public/hero.svg"
 import { MynauiCloudDownload } from "App/components/ui/icons/MynauiCloudDownload"
+import { useLocale } from "next-intl"
+import { useCurriculum } from "@/hooks/useCurriculum"
 
 export const personalData = {
   github: "https://github.com/andersonbarbosadev",
@@ -17,6 +21,10 @@ export const personalData = {
 function HeroSection() {
   // -- Hooks
   const t = useTranslations()
+  const { curriculumURL } = useCurriculum()
+
+  // -- States Memo
+
 
   // -- Render
   return (
@@ -86,7 +94,8 @@ function HeroSection() {
 
             <Link
               className="flex items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 py-3 text-center text-xs font-medium tracking-wider text-white uppercase no-underline transition-all duration-200 ease-out hover:gap-3 hover:text-white hover:no-underline md:px-8 md:py-4 md:text-sm md:font-semibold"
-              href="/cv"
+              target="_blank"
+              href={curriculumURL}
             >
               <span>{t("Get CV")}</span>
               <MynauiCloudDownload />
