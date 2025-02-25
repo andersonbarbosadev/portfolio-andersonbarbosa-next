@@ -18,6 +18,10 @@
     {
       "pattern": "andersonbarbosa.site",
       "custom_domain": true
+    },
+    {
+      "pattern": "www.andersonbarbosa.site",
+      "custom_domain": true
     }
   ]
 }
