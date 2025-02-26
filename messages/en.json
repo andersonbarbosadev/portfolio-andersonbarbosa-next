@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Anderson Barbosa's Portfolio",
+    "description": "Fullstack developer with more than 7 years of experience in creating web applications with JS, PHP, and Python."
+  },
   "English": "English",
   "Spanish": "Spanish",
   "About me": "About me",
@@ -21,6 +25,7 @@
   "Description": "Description",
   "Certificates": "Certificates",
   "View more": "View more",
+  "Full-Stack developer": "Full-Stack developer",
   "data": {
     "about": {
       "description": "Software engineer with over 7 years of experience in Full-Stack development, specializing in languages like Python, PHP, and JS, and database administration including MySQL, PostgreSQL, Oracle, and MongoDB. My leadership has been evident in directing development teams, fostering collaboration, and ensuring the successful delivery of innovative projects."

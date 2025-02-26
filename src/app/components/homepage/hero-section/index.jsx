@@ -5,10 +5,9 @@ import Image from "next/image"
 import { routing, Link } from "@/i18n/routing"
 import { FaSquareFacebook, FaSquareXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6"
 import { RiContactsFill } from "react-icons/ri"
-import HeroImages from "Public/image/img-hero.webp"
+import HeroImages from "Public/image/logo-anderson.webp"
 import HeroImg from "Public/hero.svg"
 import { MynauiCloudDownload } from "App/components/ui/icons/MynauiCloudDownload"
-import { useLocale } from "next-intl"
 import { useCurriculum } from "@/hooks/useCurriculum"
 
 export const personalData = {
@@ -37,7 +36,7 @@ function HeroSection() {
         className="absolute -top-[98px] -z-10 justify-center p-2"
       />
 
-      <div className="grid grid-cols-1 items-start gap-x-4 gap-y-8 lg:grid-cols-2 lg:gap-12">
+      <div className="grid grid-cols-1 items-center gap-x-4 gap-y-8 lg:grid-cols-2 lg:gap-12">
         <div className="order-2 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:order-1 lg:pt-10">
           <h1 className="text-3xl leading-10 font-bold text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             {t("Hi")}, <br />
@@ -103,7 +102,7 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="relative order-1 lg:order-2 lg:w-96" style={{ height: "28rem" }}>
+        <div className="flex items-center justify-center relative order-1 lg:order-2 w-96 h-96">
           <Image
             src={HeroImages}
             alt="Hero"

@@ -1,3 +1,5 @@
+"use client"
+
 import AboutSection from "../components/homepage/about"
 import Blog from "../components/homepage/blog"
 import ContactSection from "../components/homepage/contact"
@@ -9,7 +11,7 @@ import Skills from "../components/homepage/skills"
 import Certificates from "../components/homepage/certificate"
 import Navbar from "../components/navbar"
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <HeroSection />

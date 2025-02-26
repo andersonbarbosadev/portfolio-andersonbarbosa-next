@@ -11,10 +11,26 @@ import { getMessages } from "next-intl/server"
 import Navbar from "../components/navbar"
 import clsx from "clsx"
 import { notFound } from "next/navigation"
+import { getTranslations } from 'next-intl/server';
+import { Inter } from 'next/font/google'
 
-export const metadata = {
-  title: "Portafolio de Anderson Barbosa",
-  description: "Fullstack developer con más de 7 años de experiencia en la creación de aplicaciones moviles y web.",
+const inter = Inter({ subsets: ['latin'] })
+
+export async function generateMetadata(props) {
+  const params = await props.params;
+  const { locale } = params
+  const t = await getTranslations({locale, namespace: 'metadata'});
+
+  return {
+    title: {
+      default: t('title'),
+      template: `%s - ${t('title')}`,
+    },
+    description: t('description'),
+    twitter: {
+      card: "summary_large_image",
+    }
+  };
 }
 
 export const viewport = {
@@ -41,7 +57,7 @@ export default async function RootLayout(props) {
 
   return (
     <html lang={locale}>
-      <body>
+      <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <ReactQueryProvider>
             <ToastContainer />

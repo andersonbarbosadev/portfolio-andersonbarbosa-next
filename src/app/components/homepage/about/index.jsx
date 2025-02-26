@@ -1,5 +1,7 @@
+"use client"
+
 import Image from "next/image"
-import ProfileImg from "Public/image/img-profile.jpg"
+import ProfileImg from "Public/image/img-hero.webp"
 import { useTranslations } from "next-intl"
 
 function AboutSection() {
