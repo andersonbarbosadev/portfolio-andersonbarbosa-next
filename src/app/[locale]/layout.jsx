@@ -16,17 +16,14 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const siteUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function generateMetadata(props) {
   const params = await props.params;
   const { locale } = params
   const t = await getTranslations({locale, namespace: 'metadata'});
 
-  const siteUrl = `${baseUrl}/${locale}`
-
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
     title: {
       default: t('title'),
       template: `%s - ${t('title')}`,
