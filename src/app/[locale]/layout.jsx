@@ -23,13 +23,13 @@ export async function generateStaticParams() {
 
 const inter = Inter({ subsets: ['latin'] })
 
-const siteUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
 export async function generateMetadata({params}) {
   const { locale } = await params;
   const t = await getTranslations({locale, namespace: 'metadata'});
+  const siteUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000');
 
   return {
+    metadataBase: new URL(siteUrl),
     title: {
       default: t('title'),
       template: `%s - ${t('title')}`,
@@ -39,23 +39,24 @@ export async function generateMetadata({params}) {
       card: "summary_large_image",
       site: "@stiven96",
       creator: '@stiven96',
-      image: `${siteUrl}/opengraph-image.jpg`,
+      image: `/opengraph-image`,
 
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `${siteUrl}/`,
       siteName: t('title'),
-      images: [
-        {
-          url: `${siteUrl}/opengraph-image.jpg`,
-          width: 1200,
-          height: 630,
-          alt: t('title'),
-        },
-      ],
-    }
+      images: `/opengraph-image`,
+      locale: locale,
+      type: 'website',
+    },
+    alternates: {
+      canonical: "/",
+      languages: Object.fromEntries(routing.locales.map((locale) => [locale, `/${locale}`])),
+    },
+
+    // Basic fields
+    applicationName: t('title'),
   };
 }
 
