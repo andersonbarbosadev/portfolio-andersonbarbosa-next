@@ -7,6 +7,6 @@ export const config = {
   // Match only internationalized pathnames
   matcher: [
     "/", "/(es|en)/:path*",
-    '/((?!api|_next|_vercel|.*/opengraph-image|.*\\..*).*)'
+    '/((?!api|_next|_vercel|og-.*\\..*).*)'
   ],
 }

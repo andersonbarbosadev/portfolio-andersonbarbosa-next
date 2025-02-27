@@ -39,14 +39,25 @@ export async function generateMetadata({params}) {
       card: "summary_large_image",
       site: "@stiven96",
       creator: '@stiven96',
-      image: `/opengraph-image`,
-
+      image: [
+        {
+          url: `/og-${locale}.jpg`,
+          with: 1200,
+          height: 630
+        }
+      ]
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
       siteName: t('title'),
-      images: `/opengraph-image`,
+      images: [
+        {
+          url: `/og-${locale}.jpg`,
+          with: 1200,
+          height: 630
+        }
+      ],
       locale: locale,
       type: 'website',
     },
