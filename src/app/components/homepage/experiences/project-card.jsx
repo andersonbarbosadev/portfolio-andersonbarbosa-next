@@ -57,7 +57,7 @@ function ProjectCard({ experience }) {
                     {experience.tools.length - 1 !== i && <span className="text-gray-400">{`', '`}</span>}
                   </React.Fragment>
                 ))}
-                <span className="text-gray-400">{"],"}</span>
+                <span className="text-gray-400">{"'],"}</span>
               </div>
               <div className="mr-2 ml-4 lg:ml-8">
                 <span className="text-white">{t("Description")}:</span>

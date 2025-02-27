@@ -6,7 +6,7 @@ import "../css/globals.css"
 import ReactQueryProvider from "@/components/providers/ReactQueryProvider"
 import GoogleAnalytics from "../GoogleAnalytics"
 import { NextIntlClientProvider } from "next-intl"
-import { routing, redirect } from "@/i18n/routing"
+import { routing } from "@/i18n/routing"
 import { getMessages } from "next-intl/server"
 import Navbar from "../components/navbar"
 import clsx from "clsx"
@@ -14,13 +14,19 @@ import { notFound } from "next/navigation"
 import { getTranslations } from 'next-intl/server';
 import { Inter } from 'next/font/google'
 
+// Generates all the possible static paths
+export async function generateStaticParams() {
+  return routing.locales.map((locale) => ({
+    locale: locale,
+  }))
+}
+
 const inter = Inter({ subsets: ['latin'] })
 
 const siteUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-export async function generateMetadata(props) {
-  const params = await props.params;
-  const { locale } = params
+export async function generateMetadata({params}) {
+  const { locale } = await params;
   const t = await getTranslations({locale, namespace: 'metadata'});
 
   return {
@@ -34,6 +40,7 @@ export async function generateMetadata(props) {
       site: "@stiven96",
       creator: '@stiven96',
       image: `${siteUrl}/opengraph-image.jpg`,
+
     },
     openGraph: {
       title: t('title'),
@@ -58,17 +65,9 @@ export const viewport = {
 
 const staticHeader = "relative mx-auto text-white sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]"
 
-export default async function RootLayout(props) {
-  const params = await props.params
 
-  const { locale } = params
-
-  const { children } = props
-
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale)) {
-    notFound()
-  }
+export default async function RootLayout({ params, children }) {
+  const { locale } = await params
 
   // Providing all messages to the client
   // side is the easiest way to get started

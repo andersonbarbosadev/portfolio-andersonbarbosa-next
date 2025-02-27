@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { routing, Link } from "@/i18n/routing"
@@ -9,6 +10,15 @@ import HeroImages from "Public/image/logo-anderson.webp"
 import HeroImg from "Public/hero.svg"
 import { MynauiCloudDownload } from "App/components/ui/icons/MynauiCloudDownload"
 import { useCurriculum } from "@/hooks/useCurriculum"
+import { Roboto } from 'next/font/google'
+import clsx from "clsx"
+
+const roboto = Roboto({
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const personalData = {
   github: "https://github.com/andersonbarbosadev",
@@ -16,6 +26,8 @@ export const personalData = {
   linkedIn: "https://www.linkedin.com/in/anderson-barbosa-romero/",
   twitter: "https://x.com/stiven96",
 }
+
+const languages = ["JS", "PHP", "PYTHON"]
 
 function HeroSection() {
   // -- Hooks
@@ -37,7 +49,7 @@ function HeroSection() {
       />
 
       <div className="grid grid-cols-1 items-center gap-x-4 gap-y-8 lg:grid-cols-2 lg:gap-12">
-        <div className="order-2 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:order-1 lg:pt-10">
+        <div className="order-2 flex flex-col items-start justify-between p-2 pb-20 md:pb-10 lg:order-1 lg:pt-10">
           <h1 className="text-3xl leading-10 font-bold text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             {t("Hi")}, <br />
             {t("I'm")}&nbsp;
@@ -49,7 +61,18 @@ function HeroSection() {
             .
           </h1>
 
-          <div className="my-12 flex items-center gap-5">
+          <div className={clsx(roboto.className, "flex text-3xl font-bold mt-2")}>
+              <span className="text-gray-400">{`['`}</span>
+              {languages.map((tag, i) => (
+                <React.Fragment key={i}>
+                  <span className="text-amber-300">{tag}</span>
+                  {languages.length - 1 !== i && <span className="text-gray-400">{`', '`}</span>}
+                </React.Fragment>
+              ))}
+              <span className="text-gray-400">{"']"}</span>
+            </div>
+
+          <div className="my-10 flex items-center gap-5">
             <Link
               href={personalData.github}
               target="_blank"
