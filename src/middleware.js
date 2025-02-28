@@ -8,6 +8,6 @@ export const config = {
   // Match only internationalized pathnames
   matcher: [
     '/', '/(es|en)/:path*',
-    '/((?!api|_next|_vercel|sitemap.xml|robots.txt|og-.*\\..*).*)',
+    '/((?!api|_next|_vercel|favicon.ico|sitemap.xml|robots.txt|og-.*\\..*).*)',
   ],
 }
