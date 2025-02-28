@@ -1,11 +1,11 @@
 'use server'
 
+import * as Sentry from "@sentry/nextjs";
+import ContactFormEmail from 'App/emails/contact-form-email'
 import { resend } from 'App/libs/resend'
 import { ContactFormSchema } from 'App/schemas/contact-form.schema'
 import { validateCaptcha } from 'App/services/captcha'
 
-import ContactFormEmail from 'App/emails/contact-form-email'
-import * as Sentry from "@sentry/nextjs";
 
 export const contactSendEmail = async (data) => {
   // Validate Data Form

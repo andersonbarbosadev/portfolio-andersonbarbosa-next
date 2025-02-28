@@ -1,8 +1,8 @@
 import { useLocale } from 'next-intl'
 import { useMemo } from 'react'
+import { curriculumData } from 'App/utils/data/curriculum'
 import { routing } from "@/i18n/routing"
 
-import { curriculumData } from 'App/utils/data/curriculum'
 
 export const useCurriculum = () => {
   // -- Hooks

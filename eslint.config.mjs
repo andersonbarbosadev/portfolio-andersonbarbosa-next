@@ -1,37 +1,28 @@
-import * as fs from "fs";
-import stylistic from '@stylistic/eslint-plugin'
-import js from '@eslint/js'
-import nextPlugin from '@next/eslint-plugin-next'
-import reactPlugin from 'eslint-plugin-react'
-import reactHooksPlugin from 'eslint-plugin-react-hooks'
-import importPlugin from 'eslint-plugin-import'
-import globals from 'globals'
+import * as fs from "fs"
+import stylistic from "@stylistic/eslint-plugin"
+import js from "@eslint/js"
+import nextPlugin from "@next/eslint-plugin-next"
+import reactPlugin from "eslint-plugin-react"
+import reactHooksPlugin from "eslint-plugin-react-hooks"
+import importPlugin from "eslint-plugin-import"
+import globals from "globals"
 
 // Archivos y directorios a ignorar
-const eslintIgnore = [
-  ".git/",
-  ".next/",
-  "node_modules/",
-  "dist/",
-  "build/",
-  "coverage/",
-  "*.min.js",
-  "*.config.js",
-]
+const eslintIgnore = [".git/", ".next/", "node_modules/", "dist/", "build/", "coverage/", "*.min.js", "*.config.js"]
 
 export default [
   {
     ignores: eslintIgnore,
     plugins: {
-      '@stylistic': stylistic,
+      "@stylistic": stylistic,
       "@next/next": nextPlugin,
       react: reactPlugin,
-      'react-hooks': reactHooksPlugin,
+      "react-hooks": reactHooksPlugin,
       import: importPlugin,
     },
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -45,22 +36,22 @@ export default [
     },
     settings: {
       react: {
-        version: 'detect',
+        version: "detect",
       },
-      'import/resolver': {
-        alias: {
+      "import/resolver": {
+        "eslint-import-resolver-alias": {
           map: [
-            ['App', './src'],  // Ajusta esto según tu configuración en jsconfig.json
+            ["App", "./src"], // Ajusta esto según tu configuración en jsconfig.json
             // Agrega aquí más alias según los tengas configurados
           ],
-          extensions: ['.js', '.jsx', '.json']
+          extensions: [".js", ".jsx", ".json"],
         },
         node: {
-          extensions: ['.js', '.jsx', '.json']
-        }
+          extensions: [".js", ".jsx", ".json"],
+        },
       },
       tailwindcss: {
-        callees: ['classnames', 'clsx', 'ctl', 'cn', 'cva'],
+        callees: ["classnames", "clsx", "ctl", "cn", "cva"],
       },
     },
     rules: {
@@ -103,27 +94,27 @@ export default [
           },
         },
       ],
-      'no-restricted-imports': [
-        'error',
+      "no-restricted-imports": [
+        "error",
         {
-          name: 'next/link',
-          message: 'Please import from `@/i18n/routing` instead.'
+          name: "next/link",
+          message: "Please import from `@/i18n/routing` instead.",
         },
         {
-          name: 'next/navigation',
-          importNames: ['redirect', 'permanentRedirect', 'useRouter', 'usePathname'],
-          message: 'Please import from `@/i18n/routing` instead.'
-        }
-      ]
-    }
+          name: "next/navigation",
+          importNames: ["redirect", "permanentRedirect", "useRouter", "usePathname"],
+          message: "Please import from `@/i18n/routing` instead.",
+        },
+      ],
+    },
   },
   js.configs.recommended,
 ]
 
 function getDirectoriesToSort() {
-  const ignoredSortingDirectories = [".git", ".next", ".vscode", "node_modules"];
+  const ignoredSortingDirectories = [".git", ".next", ".vscode", "node_modules"]
   return fs
     .readdirSync(process.cwd())
     .filter((file) => fs.statSync(process.cwd() + "/" + file).isDirectory())
-    .filter((f) => !ignoredSortingDirectories.includes(f));
+    .filter((f) => !ignoredSortingDirectories.includes(f))
 }
