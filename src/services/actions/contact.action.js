@@ -1,9 +1,11 @@
-"use server"
+'use server'
 
-import { resend } from "App/libs/resend"
-import { ContactFormSchema } from "App/schemas/contact-form.schema"
-import { validateCaptcha } from "App/services/captcha"
-import ContactFormEmail from "@/emails/contact-form-email"
+import { resend } from 'App/libs/resend'
+import { ContactFormSchema } from 'App/schemas/contact-form.schema'
+import { validateCaptcha } from 'App/services/captcha'
+
+import ContactFormEmail from 'App/emails/contact-form-email'
+import * as Sentry from "@sentry/nextjs";
 
 export const contactSendEmail = async (data) => {
   // Validate Data Form
@@ -20,14 +22,16 @@ export const contactSendEmail = async (data) => {
   // Send Email
   try {
     const data = await resend.emails.send({
-      from: "Anderson Barbosa - Full Stack <hello@andersonbarbosa.site>",
-      cc: ["andersonbarbosadev@outlook.com"],
+      from: 'Anderson Barbosa - Full Stack <hello@andersonbarbosa.site>',
+      cc: ['andersonbarbosadev@outlook.com'],
       to: [email],
-      subject: "Envio solicitud contacto",
+      subject: 'Envio solicitud contacto',
       react: ContactFormEmail({ name, email, message }),
     })
     return { success: true, data }
   } catch (error) {
-    throw new Error("Error sending email")
+    // Send sentry error
+    Sentry.captureException(error);
+    throw new Error('Error sending email')
   }
 }

@@ -1,6 +1,8 @@
-import { useLocale } from "next-intl"
-import { useMemo } from "react"
-import { curriculumData } from "@/utils/data/curriculum"
+import { useLocale } from 'next-intl'
+import { useMemo } from 'react'
+import { routing } from "@/i18n/routing"
+
+import { curriculumData } from 'App/utils/data/curriculum'
 
 export const useCurriculum = () => {
   // -- Hooks
@@ -9,7 +11,7 @@ export const useCurriculum = () => {
   // -- States
   const curriculumURL = useMemo(
     () => (locale in curriculumData ? curriculumData[locale] : curriculumData[routing.defaultLocale]),
-    [locale]
+    [locale],
   )
 
   return {

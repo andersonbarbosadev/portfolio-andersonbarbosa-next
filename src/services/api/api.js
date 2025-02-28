@@ -1,4 +1,4 @@
-import axios from "App/libs/axios"
+import axios from 'App/libs/axios'
 
 /**
  * Create data from api

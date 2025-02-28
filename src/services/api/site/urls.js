@@ -1,6 +1,6 @@
 export const siteUrls = {
   send: {
-    contact: "/api/send/contact",
+    contact: '/api/send/contact',
   },
 }
 

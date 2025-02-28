@@ -1,7 +1,7 @@
 export const getDefaultValuesForm = () => {
   return {
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   }
 }

@@ -1,10 +1,10 @@
-import {getPathname, routing} from '@/i18n/routing';
+import {getPathname, routing} from 'App/i18n/routing'
 
-const host = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+const host = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
 export default function sitemap() {
   // Adapt this as necessary
-  return [...getEntries('/')];
+  return [...getEntries('/')]
 }
 
 function getEntries(href) {
@@ -13,13 +13,13 @@ function getEntries(href) {
     lastModified: new Date(),
     alternates: {
       languages: Object.fromEntries(
-        routing.locales.map((cur) => [cur, getUrl(href, cur)])
-      )
-    }
-  }));
+        routing.locales.map((cur) => [cur, getUrl(href, cur)]),
+      ),
+    },
+  }))
 }
 
 function getUrl(href, locale) {
-  const pathname = getPathname({locale, href});
-  return host + pathname;
+  const pathname = getPathname({locale, href})
+  return host + pathname
 }
