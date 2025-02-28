@@ -29,7 +29,7 @@ export async function generateMetadata({params}) {
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000');
 
   return {
-    // metadataBase: new URL(siteUrl),
+    metadataBase: new URL(siteUrl),
     title: {
       default: t('title'),
       template: `%s - ${t('title')}`,
