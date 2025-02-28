@@ -77,7 +77,6 @@ export const viewport = {
 
 const staticHeader = "relative mx-auto text-white sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]"
 
-
 export default async function RootLayout({ params, children }) {
   const { locale } = await params
 
