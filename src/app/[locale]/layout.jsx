@@ -26,7 +26,7 @@ const inter = Inter({ subsets: ['latin'] })
 export async function generateMetadata({params}) {
   const { locale } = await params;
   const t = await getTranslations({locale, namespace: 'metadata'});
-  const siteUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000');
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000');
 
   return {
     // metadataBase: new URL(siteUrl),
