@@ -7,7 +7,6 @@ import HeroSection from "../components/homepage/hero-section"
 import Experiences from "../components/homepage/experiences"
 import Skills from "../components/homepage/skills"
 import Certificates from "../components/homepage/certificate"
-import Navbar from "../components/navbar"
 
 export default function Home() {
   return (
